@@ -225,53 +225,17 @@ footer { margin: 64px 0 40px; padding-top: 18px; border-top: 1px solid var(--lin
     <p class="role">Photographer and videographer in Amsterdam</p>
     <p class="intro">Alongside my master's in Communication Science at the University of Amsterdam, I shoot concerts, film live stand-up comedy, direct poster shoots and make reels for an agency and a student magazine.</p>
     <nav class="nav" aria-label="Sections">
-      <a href="#clients">Client reels</a>
       <a href="#photoshoot">Photoshoot</a>
-      <a href="#videography">Videography</a>
       <a href="#live">Live Photography</a>
+      <a href="#videography">Videography</a>
+      <a href="#clients">Client reels</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="sec" id="clients" aria-labelledby="clients-h">
-    <div class="sec-head"><span class="sec-num">01</span><h2 id="clients-h">Client reels</h2><p>Short videos for a visual agency and a student magazine. Each one opens on Instagram.</p></div>
-    <div class="reel-row">
-    <div class="client-group">
-      <div class="client-label"><span class="logo"><img src="img/logo-ontap.png" alt=""></span>OnTap Visual Agency</div>
-      <div class="cards">
-        <a class="rcard" href="https://www.instagram.com/reel/DY2D3jWIvV8/" target="_blank" rel="noopener" aria-label="Website launch: watch on Instagram">
-          <video class="loop" src="img/reel-ontap-1.mp4" poster="img/reel-ontap-1.jpg" muted loop playsinline preload="metadata" aria-label="A beer being poured from a bar tap."></video>
-          <span class="go">Instagram &#8599;</span>
-          <span class="cap"><span class="t">Website launch</span><span class="r">Camera, with two others &middot; May 2026</span></span>
-        </a>
-        <a class="rcard" href="https://www.instagram.com/reel/Dcgcbsjq2L_/" target="_blank" rel="noopener" aria-label="Brand identity makeovers: watch on Instagram">
-          <video class="loop" src="img/reel-ontap-2.mp4" poster="img/reel-ontap-2.jpg" muted loop playsinline preload="metadata" aria-label="A woman answers interview questions on an Amsterdam street."></video>
-          <span class="go">Instagram &#8599;</span>
-          <span class="cap"><span class="t">Brand identity makeovers</span><span class="r">Camera &middot; Aug 2026</span></span>
-        </a>
-      </div>
-    </div>
-    <div class="client-group">
-      <div class="client-label"><span class="logo"><img src="img/logo-rostra.png" alt=""></span>Rostra Economica</div>
-      <div class="cards">
-        <a class="rcard" href="https://www.instagram.com/reel/DWwYjXUjCEV/" target="_blank" rel="noopener" aria-label="Chess tournament promo: watch on Instagram">
-          <video class="loop" src="img/reel-rostra-1.mp4" poster="img/reel-rostra-1.jpg" muted loop playsinline preload="metadata" aria-label="A man on a red bridge by the water."></video>
-          <span class="go">Instagram &#8599;</span>
-          <span class="cap"><span class="t">Chess tournament promo</span><span class="r">Video &middot; Apr 2026</span></span>
-        </a>
-        <a class="rcard" href="https://www.instagram.com/reel/DUVkhpUjMUE/" target="_blank" rel="noopener" aria-label="Gabriel Zucman at the UvA: watch on Instagram">
-          <video class="loop" src="img/reel-rostra-2.mp4" poster="img/reel-rostra-2.jpg" muted loop playsinline preload="metadata" aria-label="Two editors talk at a table in a university hall."></video>
-          <span class="go">Instagram &#8599;</span>
-          <span class="cap"><span class="t">Gabriel Zucman at the UvA</span><span class="r">Video and photos &middot; Feb 2026</span></span>
-        </a>
-      </div>
-    </div>
-    </div>
-  </section>
-
   <section class="sec" id="photoshoot" aria-labelledby="photoshoot-h">
-    <div class="sec-head"><span class="sec-num">02</span><h2 id="photoshoot-h">Photoshoot</h2><p>Poster shoots for The JR Scheme, a stand-up comedy night. On the left the photo I took, on the right the poster it became, with graphics by the show's designer.</p></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2 id="photoshoot-h">Photoshoot</h2><p>Poster shoots for The JR Scheme, a stand-up comedy night. On the left the photo I took, on the right the poster it became, with graphics by the show's designer.</p></div>
     <div class="pairs">
       <div class="pair">
         <figure style="--ar:0.666">
@@ -316,7 +280,13 @@ footer { margin: 64px 0 40px; padding-top: 18px; border-top: 1px solid var(--lin
     </div>
   </section>
 
-  <section class="sec film on-dark" id="videography" aria-labelledby="videography-h">
+  <section class="sec live on-dark" id="live" aria-labelledby="live-h">
+    <div class="live-pad"><div class="sec-head"><span class="sec-num">02</span><h2 id="live-h">Live Photography</h2><p>Live music shot in low, changing stage light and edited to keep the energy of the room. Click any photo to view it large.</p></div></div>
+    <div class="wall" id="wall"></div>
+    <div class="live-cta"><a href="https://romainfaureof44.myportfolio.com/work" target="_blank" rel="noopener">See the full concert portfolio &rarr;</a></div>
+  </section>
+
+  <section class="sec film on-dark" style="margin-top:0" id="videography" aria-labelledby="videography-h">
     <video id="film" src="img/jr-loop.mp4" poster="img/jr-loop-poster.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
     <div class="film-in">
       <div class="sec-head"><span class="sec-num">03</span><h2 id="videography-h">Videography</h2><p>I film full stand-up shows on my own camera. Clips from the footage go out on Instagram.</p></div>
@@ -339,10 +309,40 @@ footer { margin: 64px 0 40px; padding-top: 18px; border-top: 1px solid var(--lin
     </div>
   </section>
 
-  <section class="sec live on-dark" id="live" aria-labelledby="live-h" style="margin-top:0">
-    <div class="live-pad"><div class="sec-head"><span class="sec-num">04</span><h2 id="live-h">Live Photography</h2><p>Live music shot in low, changing stage light and edited to keep the energy of the room. Click any photo to view it large.</p></div></div>
-    <div class="wall" id="wall"></div>
-    <div class="live-cta"><a href="https://romainfaureof44.myportfolio.com/work" target="_blank" rel="noopener">See the full concert portfolio &rarr;</a></div>
+  <section class="sec" id="clients" aria-labelledby="clients-h">
+    <div class="sec-head"><span class="sec-num">04</span><h2 id="clients-h">Client reels</h2><p>Short videos for a visual agency and a student magazine. Each one opens on Instagram.</p></div>
+    <div class="reel-row">
+    <div class="client-group">
+      <div class="client-label"><span class="logo"><img src="img/logo-ontap.png" alt=""></span>OnTap Visual Agency</div>
+      <div class="cards">
+        <a class="rcard" href="https://www.instagram.com/reel/DY2D3jWIvV8/" target="_blank" rel="noopener" aria-label="Website launch: watch on Instagram">
+          <video class="loop" src="img/reel-ontap-1.mp4" poster="img/reel-ontap-1.jpg" muted loop playsinline preload="metadata" aria-label="A beer being poured from a bar tap."></video>
+          <span class="go">Instagram &#8599;</span>
+          <span class="cap"><span class="t">Website launch</span><span class="r">Camera, with two others &middot; May 2026</span></span>
+        </a>
+        <a class="rcard" href="https://www.instagram.com/reel/Dcgcbsjq2L_/" target="_blank" rel="noopener" aria-label="Brand identity makeovers: watch on Instagram">
+          <video class="loop" src="img/reel-ontap-2.mp4" poster="img/reel-ontap-2.jpg" muted loop playsinline preload="metadata" aria-label="A woman answers interview questions on an Amsterdam street."></video>
+          <span class="go">Instagram &#8599;</span>
+          <span class="cap"><span class="t">Brand identity makeovers</span><span class="r">Camera &middot; Aug 2026</span></span>
+        </a>
+      </div>
+    </div>
+    <div class="client-group">
+      <div class="client-label"><span class="logo"><img src="img/logo-rostra.png" alt=""></span>Rostra Economica</div>
+      <div class="cards">
+        <a class="rcard" href="https://www.instagram.com/reel/DWwYjXUjCEV/" target="_blank" rel="noopener" aria-label="Chess tournament promo: watch on Instagram">
+          <video class="loop" src="img/reel-rostra-1.mp4" poster="img/reel-rostra-1.jpg" muted loop playsinline preload="metadata" aria-label="A man on a red bridge by the water."></video>
+          <span class="go">Instagram &#8599;</span>
+          <span class="cap"><span class="t">Chess tournament promo</span><span class="r">Video &middot; Apr 2026</span></span>
+        </a>
+        <a class="rcard" href="https://www.instagram.com/reel/DUVkhpUjMUE/" target="_blank" rel="noopener" aria-label="Gabriel Zucman at the UvA: watch on Instagram">
+          <video class="loop" src="img/reel-rostra-2.mp4" poster="img/reel-rostra-2.jpg" muted loop playsinline preload="metadata" aria-label="Two editors talk at a table in a university hall."></video>
+          <span class="go">Instagram &#8599;</span>
+          <span class="cap"><span class="t">Gabriel Zucman at the UvA</span><span class="r">Video and photos &middot; Feb 2026</span></span>
+        </a>
+      </div>
+    </div>
+    </div>
   </section>
 
   <section class="sec" id="projects" aria-labelledby="work-h">
