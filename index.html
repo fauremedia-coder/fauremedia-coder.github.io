@@ -398,13 +398,13 @@ const PHOTOS = [
 ];
 
 const CONCERTS = [
-  { src: "img/concert-1.jpg", sm: "img/concert-1-sm.jpg", ar: 1.778, alt: "A five-piece band on a small stage under orange spotlights, the crowd in silhouette in the foreground." },
-  { src: "img/concert-2.jpg", sm: "img/concert-2-sm.jpg", ar: 0.625, alt: "A bearded rapper in a blue and orange New York basketball jersey raises his fist while rapping into the microphone." },
-  { src: "img/concert-3.jpg", sm: "img/concert-3-sm.jpg", ar: 0.625, alt: "A singer with closed eyes holds the microphone close, bathed in blue and violet light under a pale beam." },
-  { src: "img/concert-4.jpg", sm: "img/concert-4-sm.jpg", ar: 0.667, alt: "A singer crouches on a red-lit stage looking up, with a hand-drawn neon crown added above their head." },
-  { src: "img/concert-5.jpg", sm: "img/concert-5-sm.jpg", ar: 1.6, alt: "A singer in a black turtleneck stands in thick red smoke, one arm reaching toward the camera, a spotlight flaring behind." },
-  { src: "img/concert-6.jpg", sm: "img/concert-6-sm.jpg", ar: 0.75, alt: "A singer with long curly hair in a pink top and denim shorts performs on a large stage beside a video screen." },
-  { src: "img/concert-7.jpg", sm: "img/concert-7-sm.jpg", ar: 1.6, alt: "A singer in a black top points upward mid-song, a red-lit balcony blurred behind." }
+  { src: "img/concert-1.jpg", sm: "img/concert-1-sm.jpg", cap: "Holograph band, January 2026, Amsterdam", ar: 1.778, alt: "A five-piece band on a small stage under orange spotlights, the crowd in silhouette in the foreground." },
+  { src: "img/concert-2.jpg", sm: "img/concert-2-sm.jpg", cap: "Action Bronson, July 2026, Utrecht", ar: 0.625, alt: "A bearded rapper in a blue and orange New York basketball jersey raises his fist while rapping into the microphone." },
+  { src: "img/concert-3.jpg", sm: "img/concert-3-sm.jpg", cap: "Holograph band, January 2026, Amsterdam", ar: 0.625, alt: "A singer with closed eyes holds the microphone close, bathed in blue and violet light under a pale beam." },
+  { src: "img/concert-4.jpg", sm: "img/concert-4-sm.jpg", cap: "Holograph band, January 2026, Amsterdam", ar: 0.667, alt: "A singer crouches on a red-lit stage looking up, with a hand-drawn neon crown added above their head." },
+  { src: "img/concert-5.jpg", sm: "img/concert-5-sm.jpg", cap: "Holograph band, January 2026, Amsterdam", ar: 1.6, alt: "A singer in a black turtleneck stands in thick red smoke, one arm reaching toward the camera, a spotlight flaring behind." },
+  { src: "img/concert-6.jpg", sm: "img/concert-6-sm.jpg", cap: "Jessie Reyes, September 2025, Amsterdam", ar: 0.75, alt: "A singer with long curly hair in a pink top and denim shorts performs on a large stage beside a video screen." },
+  { src: "img/concert-7.jpg", sm: "img/concert-7-sm.jpg", cap: "Lambrini Girls, November 2025, Amsterdam", ar: 1.6, alt: "A singer in a black top points upward mid-song, a red-lit balcony blurred behind." }
 ];
 
 const FILTERS = ["All", "Photography", "Video", "Art direction", "Editorial"];
@@ -640,7 +640,7 @@ let lbIndex = 0, lastFocus = null, lbSet = PHOTOS, lbName = "The JR Scheme";
 const lb = $("#lightbox");
 function showLB() {
   $("#lb-img").src = lbSet[lbIndex].src; $("#lb-img").alt = lbSet[lbIndex].alt;
-  $("#lb-cap").textContent = lbName + ", " + (lbIndex + 1) + " of " + lbSet.length + ". " + lbSet[lbIndex].alt;
+  $("#lb-cap").textContent = lbSet[lbIndex].cap || "";   /* only photos with a written caption show one */
 }
 function openLB(i, set = PHOTOS, name = "The JR Scheme") { lastFocus = document.activeElement; lbSet = set; lbName = name; lbIndex = i; showLB(); lb.classList.add("open"); $("#lb-close").focus(); }
 function closeLB() { lb.classList.remove("open"); if (lastFocus) lastFocus.focus(); }
