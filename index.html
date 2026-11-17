@@ -3,377 +3,416 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Romain Faure, Photo and Video Work</title>
-<meta name="description" content="Photography and videography by Romain Faure in Amsterdam: client reels, poster shoots, stand-up comedy films and concert photography.">
+<title>Romain Faure, communication and visual work</title>
+<meta name="description" content="Romain Faure, Communication Science master's student at the University of Amsterdam: poster shoots, client reels, live comedy films and concert photography. Looking for an internship from February 2027.">
+<meta name="theme-color" content="#0E0D0C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@95..115,400..700&display=swap" rel="stylesheet">
 <style>
+/* One warm black ground for the whole page, so the photos carry the colour.
+   The amber accent only marks interaction: focus, selection, hovered links. */
 :root {
-  --bg: #E3E3E1; --sheet: #F4F4F2; --ink: #0B0B0B; --muted: #4A4A48; --line: #BEBEBA;
-  --accent: #C32A2E; --film: #0E0E0F;
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  color-scheme: light;
+  --bg: #0E0D0C; --raise: #181614; --text: #ECE8E1; --muted: #A29C93; --line: #2C2A27; --accent: #E9B44C;
+  --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --pad: clamp(18px, 4vw, 48px); --max: 1320px;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--display); font-size: 17px; line-height: 1.55;
-  font-variation-settings: "wdth" 100; overflow-x: clip; }
-img, video { max-width: 100%; display: block; }
-a { color: inherit; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-.wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+html { background: var(--bg); scrollbar-color: #3B3834 var(--bg); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16.5px; line-height: 1.62;
+  letter-spacing: .004em; font-variation-settings: "wdth" 100; -webkit-font-smoothing: antialiased; caret-color: var(--accent); overflow-x: clip; }
+::selection { background: var(--accent); color: #17130B; }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; text-underline-offset: .28em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.icon { width: .82em; height: .82em; vertical-align: -.04em; margin-left: .25em; fill: none; stroke: currentColor;
+  stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s var(--ease); }
+.tnum { font-variant-numeric: tabular-nums; }
 
-/* header */
-header.top { padding: clamp(36px, 6vw, 72px) 0 12px; display: grid; gap: 18px; }
-.name { font-weight: 860; font-variation-settings: "wdth" 125; font-size: clamp(40px, 7.4vw, 92px); line-height: .92;
-  letter-spacing: -.02em; margin: 0; }
-.role { font-variation-settings: "wdth" 72; font-weight: 500; font-size: clamp(19px, 2.2vw, 26px); color: var(--muted); margin: 0; }
-.intro { max-width: 62ch; margin: 4px 0 0; }
-.nav { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 6px; }
-.nav a { text-decoration: none; font-weight: 600; font-size: 15px; padding: 7px 13px; border: 1.5px solid var(--ink);
-  border-radius: 999px; background: var(--sheet); }
-.nav a:hover { background: var(--ink); color: var(--sheet); }
+/* text links and buttons share one quiet style */
+.tl { font: inherit; font-size: 14.5px; color: var(--text); background: none; border: 0; padding: 2px 0; cursor: pointer;
+  text-decoration: underline; text-decoration-color: #55504A; text-underline-offset: .3em; white-space: nowrap; }
+.tl:hover { text-decoration-color: var(--accent); }
+.tl:hover .icon { transform: translate(2px, -2px); }
 
-/* every section opens the same way: rule, number, title, one line */
-.sec { margin: clamp(56px, 8vw, 96px) 0 0; scroll-margin-top: 12px; }
-.sec-head { border-top: 2px solid var(--ink); padding-top: 14px; margin-bottom: 24px;
-  display: grid; grid-template-columns: auto 1fr; column-gap: 18px; align-items: baseline; }
-.sec-num { font-variation-settings: "wdth" 72; font-weight: 600; font-size: 15px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.sec-head h2 { font-weight: 840; font-variation-settings: "wdth" 118; font-size: clamp(30px, 4.4vw, 54px); line-height: 1;
-  letter-spacing: -.015em; margin: 0; }
-.sec-head p { grid-column: 2; margin: 10px 0 0; color: var(--muted); max-width: 60ch; }
-.on-dark .sec-head { border-top-color: #fff; }
-.on-dark .sec-head h2 { color: #fff; }
-.on-dark .sec-num, .on-dark .sec-head p { color: #B9B9B6; }
+/* header: the name stays small, the work comes first */
+header.top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 8px 32px; align-items: baseline;
+  padding: 22px 0 clamp(22px, 3vw, 34px); font-size: 14.5px; line-height: 1.5; }
+.mark { margin: 0; font-size: 15px; font-weight: 650; }
+.top-r { display: flex; justify-content: space-between; align-items: baseline; gap: 10px 32px; }
+.who { margin: 0; color: var(--muted); max-width: 62ch; text-wrap: pretty; }
+
+/* section heads: title and facts on the left, one short paragraph on the right */
+.sec { padding-top: clamp(96px, 12vw, 168px); }
+.sec.first { padding-top: 0; }
+.head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 10px 32px; align-items: start; margin-bottom: clamp(20px, 2.6vw, 34px); }
+.head h2 { margin: 0; font-size: clamp(26px, 2.7vw, 38px); font-weight: 620; line-height: 1.06; letter-spacing: -.02em;
+  font-variation-settings: "wdth" 104; text-wrap: balance; }
+.head .facts { margin: 8px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.head .lede { margin: 0; max-width: 62ch; text-wrap: pretty; }
+.head .lede + .lede { margin-top: .7em; }
+
+/* poster shoots: my photo, the poster it became, and the process note beside them */
+.pairs { container-type: inline-size; display: grid; gap: clamp(56px, 7vw, 104px); }
+.pair { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 2.4vw, 36px); align-items: start;
+  --h: min(clamp(360px, calc(100svh - 290px), 700px), calc((100cqi - 300px - 36px - 12px) / var(--sum))); }
+.duo { display: flex; gap: 12px; }
+.duo figure { margin: 0; flex: none; }
+.media { display: block; position: relative; height: var(--h); width: calc(var(--h) * var(--ar)); padding: 0; border: 0;
+  overflow: hidden; background: var(--raise); color: inherit; }
+button.media { cursor: zoom-in; }
+.media img, .media video { width: 100%; height: 100%; object-fit: cover; transition: filter .4s var(--ease); }
+.media:hover img, .media:hover video { filter: brightness(1.06); }
+.duo figcaption { margin-top: 9px; font-size: 13.5px; color: var(--muted); line-height: 1.4; }
+.duo figcaption a { color: var(--text); text-decoration-color: #55504A; }
+.duo figcaption a:hover { text-decoration-color: var(--accent); }
+.note { max-width: 46ch; padding-top: 2px; }
+.note h3 { margin: 0 0 10px; font-size: 16px; font-weight: 620; line-height: 1.35; }
+.note-body { max-height: calc(1.62em * 4); overflow: hidden; color: var(--muted); font-size: 15.5px;
+  transition: max-height .55s var(--ease); -webkit-mask-image: linear-gradient(#000 45%, transparent); mask-image: linear-gradient(#000 45%, transparent); }
+.note.open .note-body { -webkit-mask-image: none; mask-image: none; }
+.note.fits .note-body { -webkit-mask-image: none; mask-image: none; }
+.note-body p { margin: 0 0 .75em; text-wrap: pretty; }
+.note-body .todo { color: #8E877E; font-style: italic; }
+.note-ctl { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 12px; }
+.note.fits .more { display: none; }
 
 /* client reels */
-.reel-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.client-label { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: 650; font-size: 15px; }
-.client-label .logo { height: 50px; padding: 3px 8px; display: flex; align-items: center; background: #fff;
-  border: 1px solid var(--line); border-radius: 6px; }
-.client-label .logo img { height: 100%; width: auto; }
-.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.rcard { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 6px;
-  background: var(--film); color: #fff; text-decoration: none; }
-.rcard video, .rcard img { width: 100%; height: 100%; object-fit: cover; }
-.rcard::after { content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(to top, rgba(8,8,8,.88), rgba(8,8,8,0) 52%); }
-.rcard .cap { position: absolute; left: 12px; right: 12px; bottom: 11px; z-index: 1; display: grid; gap: 2px; }
-.rcard .t { font-weight: 750; font-size: 16.5px; line-height: 1.2; font-variation-settings: "wdth" 104; }
-.rcard .r { font-size: 13.5px; color: #D6D6D3; }
-.rcard .go { position: absolute; top: 10px; right: 10px; z-index: 1; font-size: 12.5px; font-weight: 700;
-  background: rgba(8,8,8,.55); border: 1px solid rgba(255,255,255,.45); border-radius: 999px; padding: 4px 10px; }
+.clients { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 5vw, 72px); align-items: start; }
+.client h3 { margin: 0; font-size: clamp(19px, 1.6vw, 22px); font-weight: 620; line-height: 1.25; letter-spacing: -.01em; }
+.client .facts { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.client .desc { margin: 10px 0 0; max-width: 54ch; font-size: 15.5px; text-wrap: pretty; }
+.reels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.reel { display: block; text-decoration: none; }
+.reel .frame { display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--raise); }
+.reel .frame img, .reel .frame video { width: 100%; height: 100%; object-fit: cover; transition: filter .4s var(--ease); }
+.reel:hover .frame img, .reel:hover .frame video { filter: brightness(1.06); }
+.reel .cap { display: block; margin-top: 10px; font-size: 14.5px; line-height: 1.4; }
+.reel .t { display: block; font-weight: 600; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .28em; transition: text-decoration-color .25s; }
+.reel:hover .t { text-decoration-color: var(--accent); }
+.reel:hover .icon { transform: translate(2px, -2px); }
+.reel .r { display: block; color: var(--muted); }
+.albums { display: grid; gap: 22px; margin-top: 34px; }
+.album-h { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin: 0 0 8px; font-size: 14.5px; }
+.album-h b { font-weight: 600; }
+.album-h span { color: var(--muted); }
+.strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+.strip button { position: relative; aspect-ratio: 1; padding: 0; border: 0; background: var(--raise); cursor: zoom-in; overflow: hidden; }
+.strip img { width: 100%; height: 100%; object-fit: cover; transition: filter .4s var(--ease); }
+.strip button:hover img { filter: brightness(1.08); }
+.strip .plus { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(14,13,12,.62); font-weight: 600; font-size: 15px; }
 
-/* photoshoot: one photo and its post per row */
-.pairs { display: grid; gap: clamp(28px, 4vw, 48px); max-width: 940px; }
-.pair { display: flex; gap: clamp(8px, 1.4vw, 16px); align-items: flex-start; }
-.pair > * { flex: var(--ar) 1 0; min-width: 0; margin: 0; }
-.pair .media { display: block; width: 100%; aspect-ratio: var(--ar); overflow: hidden; border-radius: 4px; background: var(--film);
-  padding: 0; border: 0; position: relative; }
-.pair button.media { cursor: zoom-in; }
-.pair .media img, .pair .media video { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-.pair .media:hover img { transform: scale(1.02); }
-.pair .tag { position: absolute; top: 10px; right: 10px; font-size: 12.5px; font-weight: 700; color: #fff;
-  background: rgba(8,8,8,.6); border: 1px solid rgba(255,255,255,.45); border-radius: 999px; padding: 4px 10px; }
-.pair figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
-.pair figcaption b { color: var(--ink); font-weight: 650; }
-
-/* videography: the only place the film plays */
-.film { position: relative; width: 100vw; margin-left: calc(50% - 50vw); min-height: 100vh; min-height: 100svh;
-  background: var(--film); color: #fff; overflow: hidden; display: flex; align-items: flex-end; }
+/* filming live comedy: the footage fills the screen */
+.film { position: relative; width: 100vw; margin-left: calc(50% - 50vw); min-height: 100vh; min-height: 100svh; overflow: hidden;
+  display: flex; margin-top: clamp(96px, 12vw, 168px); }
 .film > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .film::before { content: ""; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to bottom, rgba(8,8,8,.72) 0, rgba(8,8,8,.15) 34%, rgba(8,8,8,.15) 50%, rgba(8,8,8,.86) 100%); }
-.film-in { position: relative; z-index: 2; width: 100%; max-width: 1180px; margin: 0 auto;
-  padding: clamp(28px, 4vw, 48px) clamp(16px, 4vw, 40px); min-height: inherit; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
-.film-foot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; }
-.vg-cards { display: flex; gap: 12px; }
-.vg-cards .rcard { width: clamp(132px, 15vw, 190px); aspect-ratio: 9 / 16; box-shadow: 0 10px 30px rgba(0,0,0,.45); }
-.film-ctl { display: grid; gap: 10px; justify-items: end; text-align: right; }
-.film-ctl p { margin: 0; font-size: 15.5px; font-weight: 550; text-shadow: 0 1px 10px rgba(0,0,0,.6); }
-.film-ctl button { font: inherit; font-size: 14.5px; font-weight: 650; color: #fff; cursor: pointer;
-  background: rgba(8,8,8,.5); border: 1px solid rgba(255,255,255,.5); border-radius: 999px; padding: 7px 14px; }
-.film-ctl button:hover { background: rgba(8,8,8,.8); }
+  background: linear-gradient(to bottom, var(--bg) 0, rgba(14,13,12,.55) 22%, rgba(14,13,12,.2) 48%, rgba(14,13,12,.82) 86%, var(--bg) 100%); }
+.film-in { position: relative; z-index: 2; width: 100%; max-width: var(--max); margin: 0 auto; padding: clamp(28px, 4vw, 48px) var(--pad);
+  display: flex; flex-direction: column; justify-content: space-between; gap: 48px; }
+.film .head .lede, .film .head .facts { text-shadow: 0 1px 12px rgba(0,0,0,.55); }
+.film-foot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.clips { display: flex; gap: 12px; }
+.clips .reel { width: clamp(128px, 13vw, 176px); }
+.clips .reel .frame { aspect-ratio: 9 / 16; }
+.film-ctl { display: grid; gap: 6px; justify-items: end; text-align: right; font-size: 14.5px; color: var(--muted); }
+.film-ctl p { margin: 0; }
+.film-ctl .icon { margin: 0 .4em 0 0; }
 
-/* concert wall: stays black */
-.live { width: 100vw; margin-left: calc(50% - 50vw); background: var(--film); color: #EDEDEA;
-  padding: clamp(30px, 4vw, 52px) clamp(10px, 1.6vw, 22px) clamp(32px, 4vw, 54px); }
-.live .sec-head { max-width: 1180px; margin-left: auto; margin-right: auto; }
-.live-pad { padding: 0 clamp(6px, 2.4vw, 18px); }
+/* live music */
+.live .head { margin-bottom: clamp(20px, 2.6vw, 34px); }
+.wall-wrap { width: 100vw; margin-left: calc(50% - 50vw); padding: 0 clamp(8px, 1.4vw, 20px); }
 .wall { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
 .shot { flex: none; width: calc(var(--ar) * 280px); height: 280px; padding: 0; border: 0; background: #000; cursor: zoom-in; overflow: hidden; }
-.shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease, filter .3s; }
-.shot:hover img { transform: scale(1.025); filter: brightness(1.07); }
-.live-cta { display: flex; justify-content: center; margin-top: clamp(24px, 3vw, 36px); }
-.live-cta a { text-decoration: none; font-weight: 700; font-size: 16px; color: #0B0B0B; background: #fff; border-radius: 999px; padding: 12px 22px; }
-.live-cta a:hover { background: #D9D9D6; }
+.shot img { width: 100%; height: 100%; object-fit: cover; transition: filter .4s var(--ease); }
+.shot:hover img { filter: brightness(1.08); }
+.live-more { margin-top: 22px; }
 
-/* projects */
-.work-tools { display: flex; justify-content: flex-end; margin: -8px 0 16px; }
-.filters { display: flex; flex-wrap: wrap; gap: 8px; }
-.filters button { font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; color: var(--ink); background: transparent;
-  border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; }
-.filters button:hover { border-color: var(--ink); }
-.filters button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--sheet); }
-.filters .count { font-variant-numeric: tabular-nums; opacity: .65; margin-left: 4px; font-weight: 500; }
-.board { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 22px; align-items: start; }
-.index { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.index li[hidden] { display: none; }
-.item { width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; background: var(--sheet);
-  border: 1px solid var(--line); border-left: 5px solid var(--line); border-radius: 6px; padding: 14px 16px; display: grid; gap: 4px; }
-.item:hover { border-left-color: var(--muted); }
-.item[aria-current="true"] { border-color: var(--ink); border-left-color: var(--accent); }
-.item-title { font-weight: 750; font-size: 18px; line-height: 1.2; font-variation-settings: "wdth" 104; }
-.item-sub { font-size: 14.5px; color: var(--muted); }
-.tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
-.tag-s { font-size: 12.5px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: rgba(11,11,11,.08); }
-.detail { background: var(--sheet); border: 1px solid var(--line); border-radius: 8px; padding: clamp(20px, 3vw, 32px); position: sticky; top: 16px; }
-.detail h3 { font-variation-settings: "wdth" 115; font-weight: 820; font-size: clamp(26px, 3vw, 36px); line-height: 1.05; margin: 0; }
-.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0 16px; font-size: 14.5px; color: var(--muted); }
-.meta b { color: var(--ink); font-weight: 650; }
-.detail p { margin: 0 0 14px; max-width: 64ch; }
-.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 6px 0 18px; }
-.gallery button { padding: 0; border: 0; background: none; cursor: zoom-in; aspect-ratio: 2 / 3; overflow: hidden; border-radius: 3px; }
-.gallery img { width: 100%; height: 100%; object-fit: cover; }
-.links { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 8px; }
-.links a { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: center; text-decoration: none;
-  border: 1px solid var(--line); border-radius: 6px; padding: 11px 14px; }
-.links a:hover { border-color: var(--ink); }
-.links .l-title { font-weight: 650; }
-.links .l-host { font-size: 13.5px; color: var(--muted); grid-column: 1; }
-.links .l-go { grid-row: 1 / span 2; grid-column: 2; font-size: 14px; font-weight: 600; color: var(--accent); }
-
-/* project albums: each event opens a photo selection */
-.albums { display: grid; gap: 8px; margin: 4px 0 14px; }
-.album-btn { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; text-align: left;
-  font: inherit; font-weight: 650; color: var(--ink); cursor: pointer; background: transparent;
-  border: 1px solid var(--line); border-radius: 6px; padding: 11px 14px; }
-.album-btn:hover, .album-btn[aria-expanded="true"] { border-color: var(--ink); }
-.album-btn .n { font-size: 13.5px; font-weight: 500; color: var(--muted); white-space: nowrap; }
-.album-btn .chev { display: inline-block; color: var(--accent); font-weight: 700; transition: transform .2s; }
-.album-btn[aria-expanded="true"] .chev { transform: rotate(90deg); }
-.album-panel { padding: 10px 2px 6px; }
-.album-panel[hidden] { display: none; }
-.album-panel p { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
-.album-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
-.album-grid button { padding: 0; border: 0; background: var(--film); cursor: zoom-in; aspect-ratio: 1; overflow: hidden; border-radius: 3px; }
-.album-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-.album-grid button:hover img { transform: scale(1.04); }
-
-/* contact */
-.say-h { font-weight: 860; font-variation-settings: "wdth" 125; font-size: clamp(48px, 9vw, 108px); line-height: .9;
-  letter-spacing: -.02em; margin: 0 0 26px; }
-.say-h span { color: var(--accent); }
-.mail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
-.mail { font-weight: 800; font-size: clamp(24px, 4.4vw, 50px); line-height: 1.15; text-decoration: none; overflow-wrap: anywhere;
-  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 100% 4px no-repeat; padding-bottom: 5px; }
-.copy { font: inherit; font-size: 14.5px; font-weight: 650; cursor: pointer; color: var(--ink); background: var(--sheet);
-  border: 1.5px solid var(--ink); border-radius: 999px; padding: 6px 14px; }
-.copy:hover { background: var(--ink); color: var(--sheet); }
-.say-links { display: flex; flex-wrap: wrap; gap: 12px 30px; margin: 30px 0 0; font-size: clamp(17px, 1.8vw, 20px); font-weight: 600; }
-.say-links a { text-underline-offset: 5px; text-decoration-thickness: 1.5px; }
-.say-facts { margin: 30px 0 0; display: grid; gap: 8px; color: var(--muted); font-size: clamp(16px, 1.6vw, 18.5px); max-width: 54ch; }
-.say-facts p { margin: 0; }
-footer { margin: 64px 0 40px; padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 8px; font-size: 14.5px; color: var(--muted); }
-.privacy { margin: 0; max-width: 74ch; font-size: 13.5px; line-height: 1.5; }
+/* contact: ends on what a recruiter needs to know */
+.contact .sign { margin: 0; max-width: 20ch; font-size: clamp(32px, 4.6vw, 66px); font-weight: 560; line-height: 1.04;
+  letter-spacing: -.028em; font-variation-settings: "wdth" 102; text-wrap: balance; }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 80px); margin-top: clamp(36px, 5vw, 64px);
+  padding-top: 22px; border-top: 1px solid var(--line); align-items: start; }
+.mail { display: inline-block; font-size: clamp(22px, 2.4vw, 32px); font-weight: 560; letter-spacing: -.012em; line-height: 1.2;
+  text-decoration: underline; text-decoration-color: #55504A; text-underline-offset: .22em; text-decoration-thickness: 1.5px; overflow-wrap: anywhere; }
+.mail:hover { text-decoration-color: var(--accent); }
+.mail-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 22px; }
+.mail-note { margin: 14px 0 0; color: var(--muted); font-size: 15px; max-width: 44ch; }
+.facts-list { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 24px; font-size: 15.5px; }
+.facts-list dt { color: var(--muted); }
+.facts-list dd { margin: 0; }
+.facts-list dd a { text-decoration-color: #55504A; }
+.facts-list dd a:hover { text-decoration-color: var(--accent); }
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; margin: clamp(80px, 10vw, 140px) 0 34px; font-size: 13.5px; color: var(--muted); }
+footer details { max-width: 70ch; }
+footer summary { cursor: pointer; text-decoration: underline; text-decoration-color: #55504A; text-underline-offset: .3em; }
+footer summary:hover { text-decoration-color: var(--accent); }
+footer details p { margin: 10px 0 0; line-height: 1.55; }
 
 /* lightbox */
-.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(8,8,8,.93); display: none; align-items: center; justify-content: center; padding: 56px 16px 64px; }
+.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10,9,8,.97); display: none; align-items: center; justify-content: center; padding: 60px 16px 70px; }
 .lightbox.open { display: flex; }
-.lightbox img { max-height: 100%; max-width: 100%; width: auto; object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
-.lb-btn { position: absolute; font: inherit; font-weight: 650; font-size: 15px; color: #fff; background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 8px 14px; cursor: pointer; }
-.lb-btn:hover { background: rgba(255,255,255,.2); }
-.lb-close { top: 12px; right: 12px; }
-.lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
-.lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
-.lb-cap { position: absolute; bottom: 16px; left: 16px; right: 16px; text-align: center; color: #DADAD7; font-size: 14.5px; }
+.lightbox img { max-height: 100%; max-width: 100%; width: auto; object-fit: contain; }
+.lb-btn { position: absolute; font: inherit; font-size: 14.5px; color: var(--text); background: none; border: 0; padding: 10px 6px; cursor: pointer;
+  text-decoration: underline; text-decoration-color: #55504A; text-underline-offset: .3em; }
+.lb-btn:hover { text-decoration-color: var(--accent); }
+.lb-close { top: 10px; right: 14px; }
+.lb-prev { left: 14px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 14px; top: 50%; transform: translateY(-50%); }
+.lb-cap { position: absolute; bottom: 20px; left: 16px; right: 16px; text-align: center; color: var(--muted); font-size: 14px; }
 
-@media (max-width: 880px) {
-  .reel-row { grid-template-columns: 1fr; gap: 28px; }
-  .board { grid-template-columns: 1fr; }
-  .detail { position: static; }
-  .work-tools { justify-content: flex-start; margin-top: 0; }
+@media (max-width: 960px) {
+  header.top { grid-template-columns: 1fr; }
+  .top-r { flex-direction: column-reverse; align-items: flex-start; }
+  .head { grid-template-columns: 1fr; }
+  .head .lede { margin-top: 6px; }
+  .clients { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  /* on phones the photo and its poster sit side by side in a swipe row */
+  .pair { grid-template-columns: 1fr; --h: min(62svh, calc((100vw - 2 * var(--pad) - 28px) / .8)); }
+  .duo { overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad);
+    scroll-padding: 0 var(--pad); }
+  .duo::-webkit-scrollbar { display: none; }
+  .duo figure { scroll-snap-align: start; }
+  .duo figure:last-child { padding-right: var(--pad); }
+  .note { max-width: 62ch; }
 }
-@media (max-width: 560px) {
+@media (max-width: 600px) {
   body { font-size: 16px; }
-  .sec-head { grid-template-columns: 1fr; }
-  .sec-head p { grid-column: 1; }
-  .cards { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
-    margin: 0 calc(-1 * clamp(16px, 4vw, 40px)); padding: 0 clamp(16px, 4vw, 40px); scroll-padding: 0 clamp(16px, 4vw, 40px); }
-  .cards::-webkit-scrollbar { display: none; }
-  .cards .rcard { flex: 0 0 74%; scroll-snap-align: start; }
-  .pair .tag { font-size: 11px; padding: 3px 7px; top: 6px; right: 6px; }
-  .pair figcaption { font-size: 12.5px; }
   .film-foot { flex-direction: column; align-items: flex-start; }
   .film-ctl { justify-items: start; text-align: left; }
-  .wall { gap: 4px; } .live { padding-left: 6px; padding-right: 6px; }
-  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .lightbox { padding-bottom: 150px; }
+  .strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .strip button:nth-child(n+5) { display: none; }
+  .wall { gap: 4px; }
+  .lightbox { padding-bottom: 130px; }
   .lb-prev, .lb-next { top: auto; bottom: 14px; transform: none; }
-  .lb-cap { bottom: 66px; font-size: 13.5px; }
+  .lb-cap { bottom: 64px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-out" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M6 4.5h5.5V10"/></symbol>
+  <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 16 16"><path d="M5.5 3.5v9M10.5 3.5v9"/></symbol>
+  <symbol id="i-play" viewBox="0 0 16 16"><path d="M5 3.2v9.6L12.5 8z"/></symbol>
+</svg>
+
 <div class="wrap">
 
   <header class="top">
-    <h1 class="name">Romain Faure</h1>
-    <p class="role">Photographer and videographer in Amsterdam</p>
-    <p class="intro">Alongside my master's in Communication Science at the University of Amsterdam, I shoot concerts, film live stand-up comedy, direct poster shoots and make reels for an agency and a student magazine.</p>
-    <nav class="nav" aria-label="Sections">
-      <a href="#photoshoot">Photoshoot</a>
-      <a href="#live">Live Photography</a>
-      <a href="#videography">Videography</a>
-      <a href="#clients">Client reels</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <p class="mark">Romain Faure</p>
+    <div class="top-r">
+    <p class="who">Master's student in Communication Science (Persuasive Communication) at the University of Amsterdam. I direct poster shoots, make reels for an agency and a student magazine, and film live comedy.</p>
+    <a class="tl" href="#contact">Internship from Feb 2027<svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+    </div>
   </header>
 
-  <section class="sec" id="photoshoot" aria-labelledby="photoshoot-h">
-    <div class="sec-head"><span class="sec-num">01</span><h2 id="photoshoot-h">Photoshoot</h2><p>Poster shoots for The JR Scheme, a stand-up comedy night. On the left the photo I took, on the right the poster it became, with graphics by the show's designer.</p></div>
+  <main>
+  <section class="sec first" id="posters" aria-labelledby="posters-h">
+    <div class="head">
+      <div>
+        <h2 id="posters-h">Poster shoots for The JR Scheme</h2>
+        <p class="facts">Photographer and director &middot; Spring 2026 to now</p>
+      </div>
+      <p class="lede">The JR Scheme is a stand-up comedy night run by Jacob Stewart and Robert Kim. I shoot the photos for their posters: my photo on the left, the poster it became on the right, with graphics by the show's designer.</p>
+    </div>
+
     <div class="pairs">
-      <div class="pair">
-        <figure style="--ar:0.666">
-          <button class="media" type="button" data-photo="4" aria-label="View my photo large"><img src="img/jr-5.jpg" alt="In a red-carpeted corridor, one comedian hovers in shorts and a blazer above the other, who lies face down." loading="lazy" decoding="async"></button>
-          <figcaption><b>My photo</b></figcaption>
-        </figure>
-        <figure style="--ar:0.8">
-          <a class="media" href="https://www.instagram.com/p/DZw1otjICrD/" target="_blank" rel="noopener" aria-label="Poster for the 3 July 2026 show: open on Instagram"><img src="img/post-ps-1.jpg" alt="Poster for the 3 July 2026 show, with graphics added by the designer." loading="lazy" decoding="async"><span class="tag">Post on Instagram &#8599;</span></a>
-          <figcaption><b>Poster for the 3 July 2026 show</b></figcaption>
-        </figure>
+      <article class="pair" style="--sum:1.466">
+        <div class="duo">
+          <figure style="--ar:.666">
+            <button class="media" type="button" data-photo="4" aria-label="View my photo large"><img src="img/jr-5.jpg" alt="In a red-carpeted corridor, one comedian hovers in shorts and a blazer above the other, who lies face down." decoding="async"></button>
+            <figcaption>My photo</figcaption>
+          </figure>
+          <figure style="--ar:.8">
+            <a class="media" href="https://www.instagram.com/p/DZw1otjICrD/" target="_blank" rel="noopener" aria-label="Poster for the 3 July 2026 show, on Instagram"><img src="img/post-ps-1.jpg" alt="Poster for the 3 July 2026 show, with graphics added by the designer." decoding="async"></a>
+            <figcaption><a href="https://www.instagram.com/p/DZw1otjICrD/" target="_blank" rel="noopener">The poster, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
+          </figure>
+        </div>
+        <div class="note">
+          <h3 class="tnum">3 July 2026 show</h3>
+          <div class="note-body" id="note-1">
+            <p>Each shoot starts with a location and a rough idea from Jacob and Robert. On set I direct the poses and improvise with what the space offers, which keeps the results spontaneous.</p>
+            <p>The show's designer then adds the graphics for the final poster.</p>
+          </div>
+          <div class="note-ctl"><button class="tl more" type="button" aria-expanded="false" aria-controls="note-1">Read the process</button></div>
+        </div>
+      </article>
+
+      <article class="pair" style="--sum:1.466">
+        <div class="duo">
+          <figure style="--ar:.666">
+            <button class="media" type="button" data-photo="0" aria-label="View my photo large"><img src="img/jr-1.jpg" alt="One comedian swings a guitar above his partner, who sits slumped by a fireplace in sunglasses." loading="lazy" decoding="async"></button>
+            <figcaption>My photo</figcaption>
+          </figure>
+          <figure style="--ar:.8">
+            <a class="media" href="https://www.instagram.com/p/DYg-CTboosw/" target="_blank" rel="noopener" aria-label="Poster for the 5 June 2026 show, on Instagram"><img src="img/post-ps-2.jpg" alt="Poster for the 5 June 2026 show, with graphics added by the designer." loading="lazy" decoding="async"></a>
+            <figcaption><a href="https://www.instagram.com/p/DYg-CTboosw/" target="_blank" rel="noopener">The poster, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
+          </figure>
+        </div>
+        <div class="note">
+          <h3 class="tnum">5 June 2026 show</h3>
+          <div class="note-body" id="note-2">
+            <p class="todo">Placeholder for Romain's process note on this shoot: the idea, how the shot was set up on location, and what changed between the photo and the poster.</p>
+          </div>
+          <div class="note-ctl"><button class="tl more" type="button" aria-expanded="false" aria-controls="note-2">Read the process</button></div>
+        </div>
+      </article>
+
+      <article class="pair" style="--sum:1.466">
+        <div class="duo">
+          <figure style="--ar:.666">
+            <button class="media" type="button" data-photo="1" aria-label="View my photo large"><img src="img/jr-2.jpg" alt="One comedian balances on a skate-park fence while the other stands below against a graffiti wall." loading="lazy" decoding="async"></button>
+            <figcaption>My photo</figcaption>
+          </figure>
+          <figure style="--ar:.8">
+            <a class="media" href="https://www.instagram.com/p/DXZfBxbCJtW/" target="_blank" rel="noopener" aria-label="Poster for the 1 May 2026 show, on Instagram"><img src="img/post-ps-4.jpg" alt="Poster for the 1 May 2026 show, with graphics added by the designer." loading="lazy" decoding="async"></a>
+            <figcaption><a href="https://www.instagram.com/p/DXZfBxbCJtW/" target="_blank" rel="noopener">The poster, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
+          </figure>
+        </div>
+        <div class="note">
+          <h3 class="tnum">1 May 2026 show</h3>
+          <div class="note-body" id="note-3">
+            <p class="todo">Placeholder for Romain's process note on this shoot: the idea, how the shot was set up on location, and what changed between the photo and the poster.</p>
+          </div>
+          <div class="note-ctl"><button class="tl more" type="button" aria-expanded="false" aria-controls="note-3">Read the process</button></div>
+        </div>
+      </article>
+
+      <article class="pair" style="--sum:1.229">
+        <div class="duo">
+          <figure style="--ar:.666">
+            <button class="media" type="button" data-photo="6" aria-label="View my photo large"><img src="img/jr-7.jpg" alt="In a red-carpeted corridor, one comedian hovers above the floor in shorts and a blazer while the other holds a cocktail." loading="lazy" decoding="async"></button>
+            <figcaption>My photo</figcaption>
+          </figure>
+          <figure style="--ar:.5625">
+            <a class="media" href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener" aria-label="Poster reel for the 7 August 2026 show, on Instagram"><video class="loop" src="img/post-ps-3.mp4" poster="img/post-ps-3.jpg" muted loop playsinline preload="metadata" aria-label="Animated poster for the 7 August 2026 show, with graphics added by the designer."></video></a>
+            <figcaption><a href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener">The poster reel, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
+          </figure>
+        </div>
+        <div class="note">
+          <h3 class="tnum">7 August 2026 show</h3>
+          <div class="note-body" id="note-4">
+            <p class="todo">Placeholder for Romain's process note on this shoot: the idea, how the shot was set up on location, and what changed between the photo and the animated poster.</p>
+          </div>
+          <div class="note-ctl"><button class="tl more" type="button" aria-expanded="false" aria-controls="note-4">Read the process</button></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="reels" aria-labelledby="reels-h">
+    <div class="head">
+      <div><h2 id="reels-h">Reels for clients</h2></div>
+      <p class="lede">Short videos for a visual agency and a student magazine. Each one opens on Instagram.</p>
+    </div>
+    <div class="clients">
+      <div class="client">
+        <h3>OnTap Visual Agency</h3>
+        <p class="facts">Freelance videographer and photographer &middot; Sep 2025 to now</p>
+        <p class="desc">An Amsterdam visual agency that connects young creatives with new brands and entrepreneurs.</p>
+        <div class="reels">
+          <a class="reel" href="https://www.instagram.com/reel/DY2D3jWIvV8/" target="_blank" rel="noopener">
+            <span class="frame"><video class="loop" src="img/reel-ontap-1.mp4" poster="img/reel-ontap-1.jpg" muted loop playsinline preload="metadata" aria-label="A beer being poured from a bar tap."></video></span>
+            <span class="cap"><span class="t">Website launch<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Camera, with two others &middot; May 2026</span></span>
+          </a>
+          <a class="reel" href="https://www.instagram.com/reel/Dcgcbsjq2L_/" target="_blank" rel="noopener">
+            <span class="frame"><video class="loop" src="img/reel-ontap-2.mp4" poster="img/reel-ontap-2.jpg" muted loop playsinline preload="metadata" aria-label="A woman answers interview questions on an Amsterdam street."></video></span>
+            <span class="cap"><span class="t">Brand identity makeovers<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Camera &middot; Aug 2026</span></span>
+          </a>
+        </div>
       </div>
-      <div class="pair">
-        <figure style="--ar:0.666">
-          <button class="media" type="button" data-photo="0" aria-label="View my photo large"><img src="img/jr-1.jpg" alt="One comedian swings a guitar above his partner, who sits slumped by a fireplace in sunglasses." loading="lazy" decoding="async"></button>
-          <figcaption><b>My photo</b></figcaption>
-        </figure>
-        <figure style="--ar:0.8">
-          <a class="media" href="https://www.instagram.com/p/DYg-CTboosw/" target="_blank" rel="noopener" aria-label="Poster for the 5 June 2026 show: open on Instagram"><img src="img/post-ps-2.jpg" alt="Poster for the 5 June 2026 show, with graphics added by the designer." loading="lazy" decoding="async"><span class="tag">Post on Instagram &#8599;</span></a>
-          <figcaption><b>Poster for the 5 June 2026 show</b></figcaption>
-        </figure>
-      </div>
-      <div class="pair">
-        <figure style="--ar:0.666">
-          <button class="media" type="button" data-photo="1" aria-label="View my photo large"><img src="img/jr-2.jpg" alt="One comedian balances on a skate-park fence while the other stands below against a graffiti wall." loading="lazy" decoding="async"></button>
-          <figcaption><b>My photo</b></figcaption>
-        </figure>
-        <figure style="--ar:0.8">
-          <a class="media" href="https://www.instagram.com/p/DXZfBxbCJtW/" target="_blank" rel="noopener" aria-label="Poster for the 1 May 2026 show: open on Instagram"><img src="img/post-ps-4.jpg" alt="Poster for the 1 May 2026 show, with graphics added by the designer." loading="lazy" decoding="async"><span class="tag">Post on Instagram &#8599;</span></a>
-          <figcaption><b>Poster for the 1 May 2026 show</b></figcaption>
-        </figure>
-      </div>
-      <div class="pair">
-        <figure style="--ar:0.666">
-          <button class="media" type="button" data-photo="6" aria-label="View my photo large"><img src="img/jr-7.jpg" alt="In a red-carpeted corridor, one comedian hovers above the floor in shorts and a blazer while the other holds a cocktail." loading="lazy" decoding="async"></button>
-          <figcaption><b>My photo</b></figcaption>
-        </figure>
-        <figure style="--ar:0.5625">
-          <a class="media" href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener" aria-label="Poster reel for the 7 August 2026 show: open on Instagram"><video class="loop" src="img/post-ps-3.mp4" poster="img/post-ps-3.jpg" muted loop playsinline preload="metadata" aria-label="Animated poster for the 7 August 2026 show, with graphics added by the designer."></video><span class="tag">Reel on Instagram &#8599;</span></a>
-          <figcaption><b>Poster reel for the 7 August 2026 show</b></figcaption>
-        </figure>
+      <div class="client">
+        <h3>Rostra Economica</h3>
+        <p class="facts">Photographer and videographer, marketing committee &middot; Oct 2025 to Jun 2026</p>
+        <p class="desc">A student magazine. It gave my work a purpose and a platform: it reached readers instead of staying on a hard drive.</p>
+        <div class="reels">
+          <a class="reel" href="https://www.instagram.com/reel/DWwYjXUjCEV/" target="_blank" rel="noopener">
+            <span class="frame"><video class="loop" src="img/reel-rostra-1.mp4" poster="img/reel-rostra-1.jpg" muted loop playsinline preload="metadata" aria-label="A man on a red bridge by the water."></video></span>
+            <span class="cap"><span class="t">Chess tournament promo<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Video &middot; Apr 2026</span></span>
+          </a>
+          <a class="reel" href="https://www.instagram.com/reel/DUVkhpUjMUE/" target="_blank" rel="noopener">
+            <span class="frame"><video class="loop" src="img/reel-rostra-2.mp4" poster="img/reel-rostra-2.jpg" muted loop playsinline preload="metadata" aria-label="Two editors talk at a table in a university hall."></video></span>
+            <span class="cap"><span class="t">Gabriel Zucman at the UvA<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Video and photos &middot; Feb 2026</span></span>
+          </a>
+        </div>
+        <div class="albums" id="albums"></div>
       </div>
     </div>
   </section>
 
-  <section class="sec live on-dark" id="live" aria-labelledby="live-h">
-    <div class="live-pad"><div class="sec-head"><span class="sec-num">02</span><h2 id="live-h">Live Photography</h2><p>Live music shot in low, changing stage light and edited to keep the energy of the room. Click any photo to view it large.</p></div></div>
-    <div class="wall" id="wall"></div>
-    <div class="live-cta"><a href="https://romainfaureof44.myportfolio.com/work" target="_blank" rel="noopener">See the full concert portfolio &rarr;</a></div>
-  </section>
-
-  <section class="sec film on-dark" style="margin-top:0" id="videography" aria-labelledby="videography-h">
+  <section class="film" id="film-sec" aria-labelledby="film-h">
     <video id="film" src="img/jr-loop.mp4" poster="img/jr-loop-poster.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
     <div class="film-in">
-      <div class="sec-head"><span class="sec-num">03</span><h2 id="videography-h">Videography</h2><p>I film full stand-up shows on my own camera. Clips from the footage go out on Instagram.</p></div>
+      <div class="head">
+        <div>
+          <h2 id="film-h">Filming live comedy</h2>
+          <p class="facts">The JR Scheme &middot; Camera operator</p>
+        </div>
+        <p class="lede">I film full stand-up shows on my own camera. Clips from the footage go out on Instagram.</p>
+      </div>
       <div class="film-foot">
-        <div class="vg-cards">
-          <a class="rcard" href="https://www.instagram.com/reel/DdyGW4EIfyI/" target="_blank" rel="noopener" aria-label="Stand-up clip: watch on Instagram">
-            <img src="img/post-vg-1.jpg" alt="" loading="lazy" decoding="async">
-            <span class="cap"><span class="t">Stand-up clip</span><span class="r">Sep 2026</span></span>
+        <div class="clips">
+          <a class="reel" href="https://www.instagram.com/reel/DdyGW4EIfyI/" target="_blank" rel="noopener">
+            <span class="frame"><img src="img/post-vg-1.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="cap"><span class="t">Stand-up clip<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Sep 2026</span></span>
           </a>
-          <a class="rcard" href="https://www.instagram.com/reel/Dd3ENzZBNtD/" target="_blank" rel="noopener" aria-label="Heckler clip: watch on Instagram">
-            <img src="img/post-vg-2.jpg" alt="" loading="lazy" decoding="async">
-            <span class="cap"><span class="t">Heckler clip</span><span class="r">JR Scheme &middot; Sep 2026</span></span>
+          <a class="reel" href="https://www.instagram.com/reel/Dd3ENzZBNtD/" target="_blank" rel="noopener">
+            <span class="frame"><img src="img/post-vg-2.jpg" alt="" loading="lazy" decoding="async"></span>
+            <span class="cap"><span class="t">Heckler clip<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Sep 2026</span></span>
           </a>
         </div>
         <div class="film-ctl">
           <p>Playing behind: The JR Scheme, live.</p>
-          <button type="button" id="film-toggle">Pause video</button>
+          <button class="tl" type="button" id="film-toggle"><svg class="icon" aria-hidden="true"><use href="#i-pause"/></svg><span>Pause the footage</span></button>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="clients" aria-labelledby="clients-h">
-    <div class="sec-head"><span class="sec-num">04</span><h2 id="clients-h">Client reels</h2><p>Short videos for a visual agency and a student magazine. Each one opens on Instagram.</p></div>
-    <div class="reel-row">
-    <div class="client-group">
-      <div class="client-label"><span class="logo"><img src="img/logo-ontap.png" alt=""></span>OnTap Visual Agency</div>
-      <div class="cards">
-        <a class="rcard" href="https://www.instagram.com/reel/DY2D3jWIvV8/" target="_blank" rel="noopener" aria-label="Website launch: watch on Instagram">
-          <video class="loop" src="img/reel-ontap-1.mp4" poster="img/reel-ontap-1.jpg" muted loop playsinline preload="metadata" aria-label="A beer being poured from a bar tap."></video>
-          <span class="go">Instagram &#8599;</span>
-          <span class="cap"><span class="t">Website launch</span><span class="r">Camera, with two others &middot; May 2026</span></span>
-        </a>
-        <a class="rcard" href="https://www.instagram.com/reel/Dcgcbsjq2L_/" target="_blank" rel="noopener" aria-label="Brand identity makeovers: watch on Instagram">
-          <video class="loop" src="img/reel-ontap-2.mp4" poster="img/reel-ontap-2.jpg" muted loop playsinline preload="metadata" aria-label="A woman answers interview questions on an Amsterdam street."></video>
-          <span class="go">Instagram &#8599;</span>
-          <span class="cap"><span class="t">Brand identity makeovers</span><span class="r">Camera &middot; Aug 2026</span></span>
-        </a>
+  <section class="sec live" id="live" aria-labelledby="live-h">
+    <div class="head">
+      <div>
+        <h2 id="live-h">Live music</h2>
+        <p class="facts">Concert photography &middot; Ongoing</p>
       </div>
+      <p class="lede">Shot in low, changing stage light and edited to keep the energy of the room.</p>
     </div>
-    <div class="client-group">
-      <div class="client-label"><span class="logo"><img src="img/logo-rostra.png" alt=""></span>Rostra Economica</div>
-      <div class="cards">
-        <a class="rcard" href="https://www.instagram.com/reel/DWwYjXUjCEV/" target="_blank" rel="noopener" aria-label="Chess tournament promo: watch on Instagram">
-          <video class="loop" src="img/reel-rostra-1.mp4" poster="img/reel-rostra-1.jpg" muted loop playsinline preload="metadata" aria-label="A man on a red bridge by the water."></video>
-          <span class="go">Instagram &#8599;</span>
-          <span class="cap"><span class="t">Chess tournament promo</span><span class="r">Video &middot; Apr 2026</span></span>
-        </a>
-        <a class="rcard" href="https://www.instagram.com/reel/DUVkhpUjMUE/" target="_blank" rel="noopener" aria-label="Gabriel Zucman at the UvA: watch on Instagram">
-          <video class="loop" src="img/reel-rostra-2.mp4" poster="img/reel-rostra-2.jpg" muted loop playsinline preload="metadata" aria-label="Two editors talk at a table in a university hall."></video>
-          <span class="go">Instagram &#8599;</span>
-          <span class="cap"><span class="t">Gabriel Zucman at the UvA</span><span class="r">Video and photos &middot; Feb 2026</span></span>
-        </a>
-      </div>
-    </div>
-    </div>
+    <div class="wall-wrap"><div class="wall" id="wall"></div></div>
+    <p class="live-more"><a class="tl" href="https://romainfaureof44.myportfolio.com/work" target="_blank" rel="noopener">The full concert portfolio<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></p>
   </section>
 
-  <section class="sec" id="projects" aria-labelledby="work-h">
-    <div class="sec-head"><span class="sec-num">05</span><h2 id="work-h">Projects</h2><p>The background to each body of work, with links to see more.</p></div>
-    <div class="work-tools"><div class="filters" id="filters" role="group" aria-label="Filter projects by discipline"></div></div>
-    <div class="board">
-      <ul class="index" id="index"></ul>
-      <article class="detail" id="detail" aria-live="polite"></article>
+  <section class="sec contact" id="contact" aria-labelledby="contact-h">
+    <h2 class="sign" id="contact-h">Looking for a communication or marketing internship from February&nbsp;2027.</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="mail-row">
+          <a class="mail" href="mailto:fauremedia@gmail.com">fauremedia@gmail.com</a>
+          <button class="tl" type="button" id="copy-mail">Copy address</button>
+        </div>
+        <p class="mail-note">Write to me about an internship, a project or a question about the work above.</p>
+      </div>
+      <dl class="facts-list">
+        <dt>Studying</dt><dd>MSc Communication Science, Persuasive Communication, University of Amsterdam, 2026&ndash;2027</dd>
+        <dt>Based in</dt><dd>Amsterdam</dd>
+        <dt>Languages</dt><dd>French (native), English (fluent)</dd>
+        <dt>Elsewhere</dt><dd><a href="https://www.instagram.com/romain_faure4_4/" target="_blank" rel="noopener">Instagram, @romain_faure4_4</a></dd>
+      </dl>
     </div>
   </section>
-
-  <section class="sec" id="contact" aria-labelledby="say-h">
-    <div class="sec-head"><span class="sec-num">06</span><h2 style="font-size:clamp(20px,2vw,24px)">Contact</h2></div>
-    <p class="say-h" id="say-h">Let's talk<span>.</span></p>
-    <div class="mail-row">
-      <a class="mail" href="mailto:fauremedia@gmail.com">fauremedia@gmail.com</a>
-      <button class="copy" type="button" id="copy-mail">Copy address</button>
-    </div>
-    <div class="say-links">
-      <a href="https://www.instagram.com/romain_faure4_4/" target="_blank" rel="noopener">Instagram, @romain_faure4_4</a>
-      <a href="https://romainfaureof44.myportfolio.com/work" target="_blank" rel="noopener">Concert portfolio</a>
-    </div>
-    <div class="say-facts">
-      <p>Based in Amsterdam. Looking for an internship from February 2027, alongside my master's in Communication Science at the University of Amsterdam.</p>
-      <p>French (native), English (fluent).</p>
-    </div>
-  </section>
+  </main>
 
   <footer>
     <span>Romain Faure, Amsterdam</span>
-    <p class="privacy">Privacy: this site sets no cookies and runs no analytics or tracking. It is hosted on GitHub Pages, which keeps standard technical logs such as IP addresses, and its font loads from Google Fonts, which also receives your IP address. Instagram links open Instagram, which has its own privacy policy.</p>
+    <details>
+      <summary>Privacy</summary>
+      <p>This site sets no cookies and runs no analytics or tracking. It is hosted on GitHub Pages, which keeps standard technical logs such as IP addresses, and its font loads from Google Fonts, which also receives your IP address. Instagram links open Instagram, which has its own privacy policy.</p>
+    </details>
   </footer>
 </div>
 
@@ -387,7 +426,6 @@ footer { margin: 64px 0 40px; padding-top: 18px; border-top: 1px solid var(--lin
 
 <script>
 const PHOTOS = [
-
   { src: "img/jr-1.jpg", alt: "One comedian swings a guitar above his partner, who sits slumped by a fireplace in sunglasses." },
   { src: "img/jr-2.jpg", alt: "One comedian balances on a skate-park fence while the other stands below against a graffiti wall." },
   { src: "img/jr-3.jpg", alt: "A man in a suit puts on a helmet at the top of a skate ramp under a blue sky." },
@@ -407,138 +445,127 @@ const CONCERTS = [
   { src: "img/concert-7.jpg", sm: "img/concert-7-sm.jpg", cap: "Lambrini Girls, November 2025, Amsterdam", ar: 1.6, alt: "A singer in a black top points upward mid-song, a red-lit balcony blurred behind." }
 ];
 
-const FILTERS = ["All", "Photography", "Video", "Art direction", "Editorial"];
-
-const PROJECTS = [
-  {
-    id: "jr-scheme",
-    title: "The JR Scheme",
-    sub: "Poster shoots and show films for a stand-up comedy night",
-    tags: ["Photography", "Art direction", "Video"],
-    when: "Spring 2026 to now",
-    role: "Photographer, director, camera operator",
-    body: [
-      "The JR Scheme is a stand-up comedy show run by Jacob Stewart and his co-host Robert Kim. For the past six months I've shot the photos for their posters.",
-      "Each shoot starts with a location and a rough idea from the two of them. On set I direct the poses and improvise based on what the space offers, which keeps the results spontaneous. A designer then adds the graphics for the final posters. I also film their full shows on my own camera."
-    ],
-    gallery: true,
-    links: [
-      { t: "JR Scheme's Instagram page", u: "https://www.instagram.com/jr_scheme/" }
-    ]
-  },
-  {
-    id: "rostra",
-    title: "Rostra Economica",
-    sub: "Photo and video for a student magazine",
-    tags: ["Photography", "Video", "Editorial"],
-    when: "October 2025 to June 2026",
-    role: "Photographer and videographer, marketing committee",
-    body: [
-      "I joined the student magazine in October 2025. It gave me assignments with a purpose and a platform to publish, so my work reached readers instead of staying on a hard drive.",
-      "Open an event below to see a selection of my photos from it."
-    ],
-    albums: [
-      { t: "Printed Edition Launches", text: "Covered the launch parties of both magazines we designed and printed.", photos: [
-        { src: "img/launch-a1.jpg", sm: "img/launch-a1-sm.jpg", alt: "Two editors hold up copies of the Amsterdam issue outside the launch venue." },
-        { src: "img/launch-a2.jpg", sm: "img/launch-a2-sm.jpg", alt: "A smiling reader holds the Amsterdam issue of Rostra." },
-        { src: "img/launch-a3.jpg", sm: "img/launch-a3-sm.jpg", alt: "A Best Article Award is handed over in front of a green plant wall." },
-        { src: "img/launch-d1.jpg", sm: "img/launch-d1-sm.jpg", alt: "A stack of the Decomposition winter issue on a wooden table." },
-        { src: "img/launch-d2.jpg", sm: "img/launch-d2-sm.jpg", alt: "Guests raise their arms in a crowded basement bar at the winter launch." },
-        { src: "img/launch-d3.jpg", sm: "img/launch-d3-sm.jpg", alt: "A guest works on the magazine's crossword with a pen." },
-        { src: "img/launch-d4.jpg", sm: "img/launch-d4-sm.jpg", alt: "Members of the editorial team wave to the crowd." },
-        { src: "img/launch-d5.jpg", sm: "img/launch-d5-sm.jpg", alt: "A winner holds a red-framed Best Article Award next to the presenter." },
-        { src: "img/launch-d6.jpg", sm: "img/launch-d6-sm.jpg", alt: "Guests smile as they follow the award ceremony." },
-        { src: "img/launch-d7.jpg", sm: "img/launch-d7-sm.jpg", alt: "The presenter reveals a framed award at the bar." },
-        { src: "img/launch-x1.jpg", sm: "img/launch-x1-sm.jpg", alt: "A guest drinks a beer straight at the camera under flash." }
-      ] },
-      { t: "Chess event", text: "Rostra's chess tournament at Café de Krater.", photos: [
-        { src: "img/chess-c1.jpg", sm: "img/chess-c1-sm.jpg", alt: "Rows of players concentrate over chessboards along a long café table." },
-        { src: "img/chess-c2.jpg", sm: "img/chess-c2-sm.jpg", alt: "Players laugh between moves at boards by the café window." },
-        { src: "img/chess-c3.jpg", sm: "img/chess-c3-sm.jpg", alt: "Two players grin over a game while friends look on, balloons behind them." },
-        { src: "img/chess-c4.jpg", sm: "img/chess-c4-sm.jpg", alt: "Two players shake hands across the board as a friend watches with a beer." },
-        { src: "img/chess-c5.jpg", sm: "img/chess-c5-sm.jpg", alt: "A player in a striped sweater studies the board in soft window light." },
-        { src: "img/chess-c6.jpg", sm: "img/chess-c6-sm.jpg", alt: "A player leans over his move, seen between two onlookers." },
-        { src: "img/chess-c7.jpg", sm: "img/chess-c7-sm.jpg", alt: "A long row of players bent over chessboards under hanging mesh lamps in the evening." },
-        { src: "img/chess-c8.jpg", sm: "img/chess-c8-sm.jpg", alt: "A curly-haired player laughs with his arms folded beside the board." },
-        { src: "img/chess-c9.jpg", sm: "img/chess-c9-sm.jpg", alt: "Players line the window tables while onlookers crowd the café behind them." }
-      ] }
-    ],
-    links: [
-      { t: "Rostra Economica on Instagram", u: "https://www.instagram.com/rostraeconomica/" }
-    ]
-  },
-  {
-    id: "concerts",
-    title: "Concert photography",
-    sub: "Live music, edited for my portfolio",
-    tags: ["Photography"],
-    when: "Ongoing",
-    role: "Photographer and editor",
-    body: [
-      "My main portfolio: live shots from concerts, shot in low and changing stage light and edited to keep the energy of the room."
-    ],
-    links: [
-      { t: "Concert portfolio", u: "https://romainfaureof44.myportfolio.com/work" }
-    ]
-  },
-  {
-    id: "ontap",
-    title: "OnTap Visual Agency",
-    sub: "Freelance shoots for an Amsterdam visual agency",
-    tags: ["Video", "Photography"],
-    when: "September 2025 to now",
-    role: "Freelance videographer and photographer",
-    body: [
-      "OnTap is an Amsterdam-based visual agency for photography, video production and design. It connects young creatives with new brands and entrepreneurs at an accessible price.",
-      "I work through OnTap as both a videographer and a photographer."
-    ],
-    links: [
-      { t: "OnTap Visuals on Instagram", u: "https://www.instagram.com/ontapvisuals/" }
-    ]
-  }
+/* Rostra event photos */
+const ALBUMS = [
+  { t: "Printed edition launches", text: "The launch parties of both magazines we designed and printed.", photos: [
+    { src: "img/launch-a1.jpg", sm: "img/launch-a1-sm.jpg", alt: "Two editors hold up copies of the Amsterdam issue outside the launch venue." },
+    { src: "img/launch-a2.jpg", sm: "img/launch-a2-sm.jpg", alt: "A smiling reader holds the Amsterdam issue of Rostra." },
+    { src: "img/launch-a3.jpg", sm: "img/launch-a3-sm.jpg", alt: "A Best Article Award is handed over in front of a green plant wall." },
+    { src: "img/launch-d1.jpg", sm: "img/launch-d1-sm.jpg", alt: "A stack of the Decomposition winter issue on a wooden table." },
+    { src: "img/launch-d2.jpg", sm: "img/launch-d2-sm.jpg", alt: "Guests raise their arms in a crowded basement bar at the winter launch." },
+    { src: "img/launch-d3.jpg", sm: "img/launch-d3-sm.jpg", alt: "A guest works on the magazine's crossword with a pen." },
+    { src: "img/launch-d4.jpg", sm: "img/launch-d4-sm.jpg", alt: "Members of the editorial team wave to the crowd." },
+    { src: "img/launch-d5.jpg", sm: "img/launch-d5-sm.jpg", alt: "A winner holds a red-framed Best Article Award next to the presenter." },
+    { src: "img/launch-d6.jpg", sm: "img/launch-d6-sm.jpg", alt: "Guests smile as they follow the award ceremony." },
+    { src: "img/launch-d7.jpg", sm: "img/launch-d7-sm.jpg", alt: "The presenter reveals a framed award at the bar." },
+    { src: "img/launch-x1.jpg", sm: "img/launch-x1-sm.jpg", alt: "A guest drinks a beer straight at the camera under flash." }
+  ] },
+  { t: "Chess event", text: "Rostra's chess tournament at Café de Krater.", photos: [
+    { src: "img/chess-c1.jpg", sm: "img/chess-c1-sm.jpg", alt: "Rows of players concentrate over chessboards along a long café table." },
+    { src: "img/chess-c2.jpg", sm: "img/chess-c2-sm.jpg", alt: "Players laugh between moves at boards by the café window." },
+    { src: "img/chess-c3.jpg", sm: "img/chess-c3-sm.jpg", alt: "Two players grin over a game while friends look on, balloons behind them." },
+    { src: "img/chess-c4.jpg", sm: "img/chess-c4-sm.jpg", alt: "Two players shake hands across the board as a friend watches with a beer." },
+    { src: "img/chess-c5.jpg", sm: "img/chess-c5-sm.jpg", alt: "A player in a striped sweater studies the board in soft window light." },
+    { src: "img/chess-c6.jpg", sm: "img/chess-c6-sm.jpg", alt: "A player leans over his move, seen between two onlookers." },
+    { src: "img/chess-c7.jpg", sm: "img/chess-c7-sm.jpg", alt: "A long row of players bent over chessboards under hanging mesh lamps in the evening." },
+    { src: "img/chess-c8.jpg", sm: "img/chess-c8-sm.jpg", alt: "A curly-haired player laughs with his arms folded beside the board." },
+    { src: "img/chess-c9.jpg", sm: "img/chess-c9-sm.jpg", alt: "Players line the window tables while onlookers crowd the café behind them." }
+  ] }
 ];
 
 const $ = (s) => document.querySelector(s);
-const host = (u) => new URL(u).hostname.replace(/^www\./, "");
 const esc = (s) => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const canHover = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-/* videos play only while they are on screen */
+/* Process notes: the first lines show; hovering the shoot (or the button) reveals the rest */
+document.querySelectorAll(".pair").forEach(pair => {
+  const note = pair.querySelector(".note"), body = note.querySelector(".note-body"), btn = note.querySelector(".more");
+  let pinned = false;
+  const set = (open) => {
+    note.classList.toggle("open", open);
+    body.style.maxHeight = open ? body.scrollHeight + "px" : "";
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "Show less" : "Read the process";
+  };
+  const checkFit = () => note.classList.toggle("fits", body.scrollHeight <= body.clientHeight + 2 && !note.classList.contains("open"));
+  checkFit(); window.addEventListener("resize", checkFit);
+  btn.addEventListener("click", () => { pinned = !note.classList.contains("open"); set(pinned); });
+  pair.addEventListener("mouseenter", () => { if (canHover.matches && !note.classList.contains("fits")) set(true); });
+  pair.addEventListener("mouseleave", () => { if (canHover.matches && !pinned) set(false); });
+});
+
+/* One moving image at a time: the video under the pointer, otherwise the one nearest the middle of the screen */
 const film = $("#film"), toggle = $("#film-toggle");
-let filmWanted = !reduceMotion;
-const loops = [...document.querySelectorAll("video.loop")];
-if ("IntersectionObserver" in window) {
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    const v = e.target, want = v === film ? filmWanted : !reduceMotion;
-    if (e.isIntersecting && want) v.play().catch(() => {}); else v.pause();
-  }), { threshold: 0.15 });
-  loops.forEach(v => io.observe(v)); io.observe(film);
-} else if (!reduceMotion) { loops.forEach(v => v.play().catch(() => {})); film.play().catch(() => {}); }
-film.addEventListener("play", () => { toggle.textContent = "Pause video"; });
-film.addEventListener("pause", () => { toggle.textContent = "Play video"; });
+let filmWanted = !reduceMotion, hovered = null, ticking = false;
+const vids = [...document.querySelectorAll("video.loop"), film];
+document.querySelectorAll("video.loop").forEach(v => {
+  const hit = v.closest("a") || v;
+  hit.addEventListener("mouseenter", () => { hovered = v; pick(); });
+  hit.addEventListener("mouseleave", () => { if (hovered === v) hovered = null; pick(); });
+});
+function visible(v) {
+  const r = v.getBoundingClientRect(), vh = window.innerHeight;
+  const shown = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0));
+  return { ratio: r.height ? shown / Math.min(r.height, vh) : 0, dist: Math.abs((r.top + r.bottom) / 2 - vh / 2) };
+}
+function pick() {
+  ticking = false;
+  let win = null;
+  if (hovered && visible(hovered).ratio > .3 && !reduceMotion) win = hovered;
+  else {
+    let best = Infinity;
+    vids.forEach(v => {
+      if (v === film ? !filmWanted : reduceMotion) return;
+      const s = visible(v);
+      if (s.ratio >= (v === film ? .35 : .6) && s.dist < best) { best = s.dist; win = v; }
+    });
+  }
+  vids.forEach(v => { if (v === win) { if (v.paused) v.play().catch(() => {}); } else if (!v.paused) v.pause(); });
+}
+const queue = () => { if (!ticking) { ticking = true; requestAnimationFrame(pick); } };
+window.addEventListener("scroll", queue, { passive: true });
+window.addEventListener("resize", queue);
+window.addEventListener("load", queue); queue();
+const setToggle = () => {
+  const on = !film.paused;
+  toggle.querySelector("span").textContent = on ? "Pause the footage" : "Play the footage";
+  toggle.querySelector("use").setAttribute("href", on ? "#i-pause" : "#i-play");
+};
+film.addEventListener("play", setToggle); film.addEventListener("pause", setToggle); setToggle();
 toggle.addEventListener("click", () => { filmWanted = film.paused; if (filmWanted) film.play().catch(() => {}); else film.pause(); });
-if (reduceMotion) toggle.textContent = "Play video";
 
-/* photoshoot: my photos open large */
+/* My photos open large */
 document.querySelectorAll("[data-photo]").forEach(b => b.addEventListener("click", () => openLB(+b.dataset.photo)));
 
-/* concert wall */
+/* Rostra event photos */
+$("#albums").innerHTML = ALBUMS.map((a, k) =>
+  '<div class="album"><p class="album-h"><b>' + a.t + '</b><span class="tnum">' + a.photos.length + ' photos</span></p><div class="strip">' +
+  a.photos.slice(0, 6).map((ph, i) => '<button type="button" data-a="' + k + '" data-i="' + i + '" aria-label="' +
+    (i === 5 && a.photos.length > 6 ? 'View all ' + a.photos.length + ' photos from ' + a.t : 'View photo ' + (i + 1) + ' of ' + a.photos.length + ' from ' + a.t) +
+    '"><img src="' + ph.sm + '" alt="' + esc(ph.alt) + '" loading="lazy" decoding="async">' +
+    (i === 5 && a.photos.length > 6 ? '<span class="plus tnum" aria-hidden="true">+' + (a.photos.length - 5) + '</span>' : '') + '</button>').join("") +
+  '</div></div>').join("");
+document.querySelectorAll("#albums button").forEach(b => b.addEventListener("click", () => {
+  const a = ALBUMS[+b.dataset.a]; openLB(+b.dataset.i, a.photos);
+}));
+
+/* Concert wall: justified rows that keep each photo's shape */
 const wall = $("#wall");
 CONCERTS.forEach((p, i) => {
   const b = document.createElement("button");
-  b.className = "shot"; b.type = "button";
-  b.style.setProperty("--ar", p.ar); b.dataset.ar = p.ar;
+  b.className = "shot"; b.type = "button"; b.dataset.ar = p.ar;
   b.setAttribute("aria-label", "View concert photo " + (i + 1) + " large: " + p.alt);
   b.innerHTML = '<img src="' + p.sm + '" alt="' + esc(p.alt) + '" loading="lazy" decoding="async">';
-  b.addEventListener("click", () => openLB(i, CONCERTS, "Live Photography"));
+  b.addEventListener("click", () => openLB(i, CONCERTS));
   wall.appendChild(b);
 });
 function layoutWall() {
   const W = wall.clientWidth - 1, gap = parseFloat(getComputedStyle(wall).columnGap) || 6;
   const target = W < 520 ? 150 : W < 900 ? 220 : W < 1500 ? 300 : 360;
-  const place = (row, sum) => {
+  const place = (row, sum, last) => {
     let h = (W - gap * (row.length - 1)) / sum;
-    if (row.last && h > target * 1.25) h = target;
+    if (last && h > target * 1.25) h = target;
     row.forEach(el => { el.style.width = Math.floor(h * el.dataset.ar) + "px"; el.style.height = Math.floor(h) + "px"; });
   };
   const rowH = (n, sum) => (W - gap * (n - 1)) / sum;
@@ -553,12 +580,12 @@ function layoutWall() {
     }
     row.push(el); sum += ar;
   });
-  if (row.length) { row.last = true; place(row, sum); }
+  if (row.length) place(row, sum, true);
 }
 layoutWall();
 if ("ResizeObserver" in window) new ResizeObserver(layoutWall).observe(wall); else window.addEventListener("resize", layoutWall);
 
-/* contact */
+/* Contact */
 const copyBtn = $("#copy-mail");
 copyBtn.addEventListener("click", async () => {
   try { await navigator.clipboard.writeText("fauremedia@gmail.com"); copyBtn.textContent = "Copied"; }
@@ -566,86 +593,14 @@ copyBtn.addEventListener("click", async () => {
   setTimeout(() => { copyBtn.textContent = "Copy address"; }, 2400);
 });
 
-/* projects */
-let filter = "All";
-let current = PROJECTS[0].id;
-const filtersEl = $("#filters");
-FILTERS.forEach(f => {
-  const n = f === "All" ? PROJECTS.length : PROJECTS.filter(p => p.tags.includes(f)).length;
-  const b = document.createElement("button");
-  b.type = "button"; b.dataset.f = f;
-  b.innerHTML = f + '<span class="count">' + n + '</span>';
-  b.setAttribute("aria-pressed", f === filter ? "true" : "false");
-  b.addEventListener("click", () => { filter = f; renderIndex(); });
-  filtersEl.appendChild(b);
-});
-const indexEl = $("#index");
-PROJECTS.forEach(p => {
-  const li = document.createElement("li");
-  li.dataset.id = p.id;
-  li.innerHTML = '<button class="item" type="button" aria-controls="detail">' +
-    '<span class="item-title">' + p.title + '</span><span class="item-sub">' + p.sub + '</span>' +
-    '<span class="tags">' + p.tags.map(t => '<span class="tag-s">' + t + '</span>').join("") + '</span></button>';
-  li.querySelector("button").addEventListener("click", () => {
-    select(p.id);
-    if (window.matchMedia("(max-width: 880px)").matches) $("#detail").scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-  indexEl.appendChild(li);
-});
-function renderIndex() {
-  filtersEl.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === filter ? "true" : "false"));
-  let firstVisible = null;
-  indexEl.querySelectorAll("li").forEach(li => {
-    const p = PROJECTS.find(x => x.id === li.dataset.id);
-    const show = filter === "All" || p.tags.includes(filter);
-    li.hidden = !show;
-    if (show && !firstVisible) firstVisible = p.id;
-  });
-  const cur = PROJECTS.find(x => x.id === current);
-  if (!(filter === "All" || cur.tags.includes(filter))) select(firstVisible);
-}
-function select(id) {
-  const p = PROJECTS.find(x => x.id === id) || PROJECTS[0];
-  current = p.id;
-  indexEl.querySelectorAll("li").forEach(li => li.querySelector("button").setAttribute("aria-current", li.dataset.id === p.id ? "true" : "false"));
-  const gal = p.gallery ? '<div class="gallery">' + PHOTOS.slice(0, 6).map((ph, i) =>
-    '<button type="button" data-i="' + i + '" aria-label="View photo ' + (i + 1) + ' large"><img src="' + ph.src + '" alt="' + esc(ph.alt) + '" loading="lazy"></button>').join("") + '</div>' : "";
-  $("#detail").innerHTML = '<h3>' + p.title + '</h3>' +
-    '<div class="meta"><span><b>When</b> ' + p.when + '</span><span><b>Role</b> ' + p.role + '</span></div>' +
-    p.body.map(t => '<p>' + t + '</p>').join("") + gal + albumsHTML(p) +
-    '<ul class="links">' + p.links.map(l =>
-      '<li><a href="' + l.u + '" target="_blank" rel="noopener"><span class="l-title">' + l.t + '</span><span class="l-host">' + host(l.u) + '</span><span class="l-go">Open</span></a></li>').join("") + '</ul>';
-  $("#detail").querySelectorAll(".gallery button").forEach(b => b.addEventListener("click", () => openLB(+b.dataset.i)));
-  $("#detail").querySelectorAll(".album-btn").forEach(b => b.addEventListener("click", () => {
-    const panel = document.getElementById(b.getAttribute("aria-controls")), open = b.getAttribute("aria-expanded") === "true";
-    b.setAttribute("aria-expanded", open ? "false" : "true"); panel.hidden = open;
-  }));
-  $("#detail").querySelectorAll(".album-grid button").forEach(b => b.addEventListener("click", () => {
-    const al = shownAlbums(p)[+b.dataset.a]; openLB(+b.dataset.i, al.photos, al.t);
-  }));
-}
-const shownAlbums = (p) => (p.albums || []).filter(a => a.photos.length);   /* events without photos stay hidden */
-function albumsHTML(p) {
-  const al = shownAlbums(p);
-  if (!al.length) return "";
-  return '<div class="albums">' + al.map((a, k) =>
-    '<div><button class="album-btn" type="button" aria-expanded="' + (k === 0) + '" aria-controls="album-' + p.id + '-' + k + '">' +
-      '<span>' + a.t + '</span><span class="n">' + a.photos.length + ' photos <span class="chev">&rsaquo;</span></span></button>' +
-    '<div class="album-panel" id="album-' + p.id + '-' + k + '"' + (k === 0 ? '' : ' hidden') + '>' +
-      (a.text ? '<p>' + a.text + '</p>' : '') +
-      '<div class="album-grid">' + a.photos.map((ph, i) =>
-        '<button type="button" data-a="' + k + '" data-i="' + i + '" aria-label="View photo ' + (i + 1) + ' of ' + a.photos.length + ' large"><img src="' + ph.sm + '" alt="' + esc(ph.alt) + '" loading="lazy" decoding="async"></button>').join("") +
-      '</div></div></div>').join("") + '</div>';
-}
-
-/* lightbox */
-let lbIndex = 0, lastFocus = null, lbSet = PHOTOS, lbName = "The JR Scheme";
+/* Lightbox */
+let lbIndex = 0, lastFocus = null, lbSet = PHOTOS;
 const lb = $("#lightbox");
 function showLB() {
   $("#lb-img").src = lbSet[lbIndex].src; $("#lb-img").alt = lbSet[lbIndex].alt;
-  $("#lb-cap").textContent = lbSet[lbIndex].cap || "";   /* only photos with a written caption show one */
+  $("#lb-cap").textContent = lbSet[lbIndex].cap || "";
 }
-function openLB(i, set = PHOTOS, name = "The JR Scheme") { lastFocus = document.activeElement; lbSet = set; lbName = name; lbIndex = i; showLB(); lb.classList.add("open"); $("#lb-close").focus(); }
+function openLB(i, set = PHOTOS) { lastFocus = document.activeElement; lbSet = set; lbIndex = i; showLB(); lb.classList.add("open"); $("#lb-close").focus(); }
 function closeLB() { lb.classList.remove("open"); if (lastFocus) lastFocus.focus(); }
 function step(d) { lbIndex = (lbIndex + d + lbSet.length) % lbSet.length; showLB(); }
 $("#lb-close").addEventListener("click", closeLB);
@@ -664,9 +619,6 @@ document.addEventListener("keydown", e => {
     f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
   }
 });
-
-renderIndex();
-select(current);
 </script>
 </body>
 </html>
