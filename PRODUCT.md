@@ -12,7 +12,7 @@ A second version for people booking photo and video shoots is planned later. Kee
 
 ## Principles
 - The work comes first; the name and the interface stay small.
-- Limited capacity (LC4MP): one moving image at a time, captions under images instead of over them, no filters or menus to decide on, and longer text available on request (hover or "Read the process").
+- Limited capacity (LC4MP): captions under images instead of over them, no filters or menus to decide on, and longer text available on request (hover or "Read the process").
 - Every claim comes from Romain's CV, his own words or the work itself. No invented numbers, clients or quotes.
 
 ## References

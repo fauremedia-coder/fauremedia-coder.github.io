@@ -6,16 +6,32 @@
 <title>Romain Faure, communication and visual work</title>
 <meta name="description" content="Romain Faure, Communication Science master's student at the University of Amsterdam: poster shoots, client reels, live comedy films and concert photography. Looking for an internship from February 2027.">
 <meta name="theme-color" content="#0E0D0C">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@95..115,400..700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://fauremedia-coder.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fauremedia-coder.github.io/">
+<meta property="og:title" content="Romain Faure, communication and visual work">
+<meta property="og:description" content="Communication Science master's student at the University of Amsterdam. Poster shoots, client reels, live comedy and concert photography. Looking for an internship from February 2027.">
+<meta property="og:image" content="https://fauremedia-coder.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A photo of two comedians in a red-carpeted hallway, next to the poster it became.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Archivo, hosted with the site (SIL Open Font License) */
+@font-face { font-family: "Archivo"; font-style: normal; font-display: swap; font-weight: 100 900; font-stretch: 62% 125%;
+  src: url(fonts/archivo-latin-wdth-normal.woff2) format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Archivo"; font-style: normal; font-display: swap; font-weight: 100 900; font-stretch: 62% 125%;
+  src: url(fonts/archivo-latin-ext-wdth-normal.woff2) format("woff2");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 /* One warm black ground for the whole page, so the photos carry the colour.
    The amber accent only marks interaction: focus, selection, hovered links. */
 :root {
   --bg: #0E0D0C; --raise: #181614; --text: #ECE8E1; --muted: #A29C93; --line: #2C2A27; --accent: #E9B44C;
   --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --pad: clamp(18px, 4vw, 48px); --max: 1320px;
+  --pad: clamp(18px, 4vw, 48px); --max: clamp(1320px, 86vw, 1640px);
   --ease: cubic-bezier(.16, 1, .3, 1);
   color-scheme: dark;
 }
@@ -33,7 +49,7 @@ a { color: inherit; text-underline-offset: .28em; text-decoration-thickness: 1px
 .tnum { font-variant-numeric: tabular-nums; }
 
 /* text links and buttons share one quiet style */
-.tl { font: inherit; font-size: 14.5px; color: var(--text); background: none; border: 0; padding: 2px 0; cursor: pointer;
+.tl { display: inline-block; font: inherit; font-size: 14.5px; line-height: 1.4; color: var(--text); background: none; border: 0; padding: 4px 0; cursor: pointer;
   text-decoration: underline; text-decoration-color: #55504A; text-underline-offset: .3em; white-space: nowrap; }
 .tl:hover { text-decoration-color: var(--accent); }
 .tl:hover .icon { transform: translate(2px, -2px); }
@@ -41,7 +57,9 @@ a { color: inherit; text-underline-offset: .28em; text-decoration-thickness: 1px
 /* header: the name stays small, the work comes first */
 header.top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 8px 32px; align-items: baseline;
   padding: 22px 0 clamp(22px, 3vw, 34px); font-size: 14.5px; line-height: 1.5; }
-.mark { margin: 0; font-size: 15px; font-weight: 650; }
+.mark { margin: 0; font-size: 15px; font-weight: 650; line-height: 1.5; letter-spacing: 0; }
+.top-links { display: flex; gap: 4px 20px; align-items: baseline; }
+.who-btn { display: none !important; }
 .top-r { display: flex; justify-content: space-between; align-items: baseline; gap: 10px 32px; }
 .who { margin: 0; color: var(--muted); max-width: 62ch; text-wrap: pretty; }
 
@@ -58,7 +76,7 @@ header.top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr)
 /* poster shoots: my photo, the poster it became, and the process note beside them */
 .pairs { container-type: inline-size; display: grid; gap: clamp(56px, 7vw, 104px); }
 .pair { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 2.4vw, 36px); align-items: start;
-  --h: min(clamp(360px, calc(100svh - 290px), 700px), calc((100cqi - 300px - 36px - 12px) / var(--sum))); }
+  --h: min(clamp(360px, calc(100svh - 290px), 880px), calc((100cqi - 300px - 36px - 12px) / var(--sum))); }
 .duo { display: flex; gap: 12px; }
 .duo figure { margin: 0; flex: none; }
 .media { display: block; position: relative; height: var(--h); width: calc(var(--h) * var(--ar)); padding: 0; border: 0;
@@ -67,7 +85,7 @@ button.media { cursor: zoom-in; }
 .media img, .media video { width: 100%; height: 100%; object-fit: cover; transition: filter .4s var(--ease); }
 .media:hover img, .media:hover video { filter: brightness(1.06); }
 .duo figcaption { margin-top: 9px; font-size: 13.5px; color: var(--muted); line-height: 1.4; }
-.duo figcaption a { color: var(--text); text-decoration-color: #55504A; }
+.duo figcaption a { display: inline-block; padding: 4px 0; color: var(--text); text-decoration-color: #55504A; }
 .duo figcaption a:hover { text-decoration-color: var(--accent); }
 .note { max-width: 46ch; padding-top: 2px; }
 .note h3 { margin: 0 0 10px; font-size: 16px; font-weight: 620; line-height: 1.35; }
@@ -123,6 +141,9 @@ button.media { cursor: zoom-in; }
 .film-ctl .icon { margin: 0 .4em 0 0; }
 
 /* live music */
+.reveal-rest { max-height: 0; overflow: hidden; transition: max-height .55s var(--ease); }
+.reveal-rest .lede { margin-top: .7em; }
+.more-r { margin-top: 8px; }
 .live .head { margin-bottom: clamp(20px, 2.6vw, 34px); }
 .wall-wrap { width: 100vw; margin-left: calc(50% - 50vw); padding: 0 clamp(8px, 1.4vw, 20px); }
 .wall { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
@@ -144,7 +165,7 @@ button.media { cursor: zoom-in; }
 .facts-list { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 24px; font-size: 15.5px; }
 .facts-list dt { color: var(--muted); }
 .facts-list dd { margin: 0; }
-.facts-list dd a { text-decoration-color: #55504A; }
+.facts-list dd a { display: inline-block; padding: 3px 0; text-decoration-color: #55504A; }
 .facts-list dd a:hover { text-decoration-color: var(--accent); }
 footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; margin: clamp(80px, 10vw, 140px) 0 34px; font-size: 13.5px; color: var(--muted); }
 footer details { max-width: 70ch; }
@@ -180,8 +201,20 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
   .duo figure:last-child { padding-right: var(--pad); }
   .note { max-width: 62ch; }
 }
+.lede-m { display: none; }
 @media (max-width: 600px) {
   body { font-size: 16px; }
+  /* phones: name and availability only, intro one tap away; the work comes straight after */
+  header.top { grid-template-columns: auto 1fr; column-gap: 12px; padding-bottom: 18px; }
+  .mark { white-space: nowrap; }
+  .top-r { display: contents; }
+  .top-links { grid-column: 2; grid-row: 1; flex-wrap: wrap; justify-content: flex-end; column-gap: 14px; }
+  .who-btn { display: inline-block !important; }
+  .who { grid-column: 1 / -1; grid-row: 2; display: none; }
+  header.show-who .who { display: block; }
+  .first .head .lede { display: none; }
+  .first .head { margin-bottom: 16px; }
+  .lede-m { display: block; margin: 0; }
   .film-foot { flex-direction: column; align-items: flex-start; }
   .film-ctl { justify-items: start; text-align: left; }
   .strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -205,10 +238,13 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
 <div class="wrap">
 
   <header class="top">
-    <p class="mark">Romain Faure</p>
+    <h1 class="mark">Romain Faure</h1>
     <div class="top-r">
-    <p class="who">Master's student in Communication Science (Persuasive Communication) at the University of Amsterdam. I direct poster shoots, make reels for an agency and a student magazine, and film live comedy.</p>
-    <a class="tl" href="#contact">Internship from Feb 2027<svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+    <p class="who" id="who">Master's student in Communication Science (Persuasive Communication) at the University of Amsterdam. I direct poster shoots, make reels for an agency and a student magazine, and film live comedy.</p>
+    <div class="top-links">
+      <button class="tl who-btn" type="button" aria-expanded="false" aria-controls="who">About</button>
+      <a class="tl" href="#contact">Internship from Feb 2027<svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+    </div>
     </div>
   </header>
 
@@ -219,7 +255,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
         <h2 id="posters-h">Poster shoots for The JR Scheme</h2>
         <p class="facts">Photographer and director &middot; Spring 2026 to now</p>
       </div>
-      <p class="lede">The JR Scheme is a stand-up comedy night run by Jacob Stewart and Robert Kim. I shoot the photos for their posters: my photo on the left, the poster it became on the right, with graphics by the show's designer.</p>
+      <p class="lede">The JR Scheme is a stand-up comedy night run by Jacob Stewart and Robert Kim. I shoot the photos for their posters. Each photo sits next to the poster it became, with graphics by the show's designer.</p>
     </div>
 
     <div class="pairs">
@@ -230,15 +266,16 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
             <figcaption>My photo</figcaption>
           </figure>
           <figure style="--ar:.8">
-            <a class="media" href="https://www.instagram.com/p/DZw1otjICrD/" target="_blank" rel="noopener" aria-label="Poster for the 3 July 2026 show, on Instagram"><img src="img/post-ps-1.jpg" alt="Poster for the 3 July 2026 show, with graphics added by the designer." decoding="async"></a>
+            <a class="media" href="https://www.instagram.com/p/DZw1otjICrD/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/post-ps-1.jpg" alt="Poster for the 3 July 2026 show, with graphics added by the designer." decoding="async"></a>
             <figcaption><a href="https://www.instagram.com/p/DZw1otjICrD/" target="_blank" rel="noopener">The poster, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
           </figure>
         </div>
+        <p class="lede lede-m">The JR Scheme is a stand-up comedy night run by Jacob Stewart and Robert Kim. I shoot the photos for their posters. Each photo sits next to the poster it became, with graphics by the show's designer.</p>
         <div class="note">
           <h3 class="tnum">3 July 2026 show</h3>
           <div class="note-body" id="note-1">
-            <p>Each shoot starts with a location and a rough idea from Jacob and Robert. On set I direct the poses and improvise with what the space offers, which keeps the results spontaneous.</p>
-            <p>The show's designer then adds the graphics for the final poster.</p>
+            <p>A recurring theme in the posters is Jacob and Robert fighting each other. Here it takes an unexpected turn: Robert turns out to be far more dangerous than Jacob thought.</p>
+            <p>When I saw this hallway with its red carpet and marble walls, it felt very Vatican-coded, so we started from the idea that Robert was possessed.</p>
           </div>
           <div class="note-ctl"><button class="tl more" type="button" aria-expanded="false" aria-controls="note-1">Read the process</button></div>
         </div>
@@ -251,14 +288,15 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
             <figcaption>My photo</figcaption>
           </figure>
           <figure style="--ar:.8">
-            <a class="media" href="https://www.instagram.com/p/DYg-CTboosw/" target="_blank" rel="noopener" aria-label="Poster for the 5 June 2026 show, on Instagram"><img src="img/post-ps-2.jpg" alt="Poster for the 5 June 2026 show, with graphics added by the designer." loading="lazy" decoding="async"></a>
+            <a class="media" href="https://www.instagram.com/p/DYg-CTboosw/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/post-ps-2.jpg" alt="Poster for the 5 June 2026 show, with graphics added by the designer." loading="lazy" decoding="async"></a>
             <figcaption><a href="https://www.instagram.com/p/DYg-CTboosw/" target="_blank" rel="noopener">The poster, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
           </figure>
         </div>
         <div class="note">
           <h3 class="tnum">5 June 2026 show</h3>
           <div class="note-body" id="note-2">
-            <p class="todo">Placeholder for Romain's process note on this shoot: the idea, how the shot was set up on location, and what changed between the photo and the poster.</p>
+            <p>That day we had access to the Council Chamber, a historic meeting room inside the Amrâth hotel. The set was beautiful, but we couldn't move anything, so I had to find an interesting frame for the action to happen in.</p>
+            <p>I placed them under this lamp by the chimney so those elements would pair with the graphic design and bring a sense of symmetry to it.</p>
           </div>
           <div class="note-ctl"><button class="tl more" type="button" aria-expanded="false" aria-controls="note-2">Read the process</button></div>
         </div>
@@ -271,14 +309,15 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
             <figcaption>My photo</figcaption>
           </figure>
           <figure style="--ar:.8">
-            <a class="media" href="https://www.instagram.com/p/DXZfBxbCJtW/" target="_blank" rel="noopener" aria-label="Poster for the 1 May 2026 show, on Instagram"><img src="img/post-ps-4.jpg" alt="Poster for the 1 May 2026 show, with graphics added by the designer." loading="lazy" decoding="async"></a>
+            <a class="media" href="https://www.instagram.com/p/DXZfBxbCJtW/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/post-ps-4.jpg" alt="Poster for the 1 May 2026 show, with graphics added by the designer." loading="lazy" decoding="async"></a>
             <figcaption><a href="https://www.instagram.com/p/DXZfBxbCJtW/" target="_blank" rel="noopener">The poster, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
           </figure>
         </div>
         <div class="note">
           <h3 class="tnum">1 May 2026 show</h3>
           <div class="note-body" id="note-3">
-            <p class="todo">Placeholder for Romain's process note on this shoot: the idea, how the shot was set up on location, and what changed between the photo and the poster.</p>
+            <p>Same idea here: using the elements around us to bring symmetry to the poster. I wanted Jacob doing dangerous things in the skate park and had him try a few ideas.</p>
+            <p>The vision was a politician trying to look cool skateboarding with the kids.</p>
           </div>
           <div class="note-ctl"><button class="tl more" type="button" aria-expanded="false" aria-controls="note-3">Read the process</button></div>
         </div>
@@ -291,14 +330,15 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
             <figcaption>My photo</figcaption>
           </figure>
           <figure style="--ar:.5625">
-            <a class="media" href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener" aria-label="Poster reel for the 7 August 2026 show, on Instagram"><video class="loop" data-src="img/post-ps-3.mp4" poster="img/post-ps-3.jpg" muted loop playsinline preload="none" aria-label="Animated poster for the 7 August 2026 show, with graphics added by the designer."></video></a>
+            <a class="media" href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><video class="loop" data-src="img/post-ps-3.mp4" poster="img/post-ps-3.jpg" muted loop playsinline preload="none" aria-label="Animated poster for the 7 August 2026 show, with graphics added by the designer."></video></a>
             <figcaption><a href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener">The poster reel, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
           </figure>
         </div>
         <div class="note">
           <h3 class="tnum">7 August 2026 show</h3>
           <div class="note-body" id="note-4">
-            <p class="todo">Placeholder for Romain's process note on this shoot: the idea, how the shot was set up on location, and what changed between the photo and the animated poster.</p>
+            <p>These photos were taken the same day as the one for 3 July. This one is more lighthearted, and they used two of the images to make the post more eye-catching.</p>
+            <p>Its strong suit is definitely how well the colors of the set match the graphic design.</p>
           </div>
           <div class="note-ctl"><button class="tl more" type="button" aria-expanded="false" aria-controls="note-4">Read the process</button></div>
         </div>
@@ -338,10 +378,16 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
   <section class="sec live" id="live" aria-labelledby="live-h">
     <div class="head">
       <div>
-        <h2 id="live-h">Live music</h2>
-        <p class="facts">Concert photography &middot; Ongoing</p>
+        <h2 id="live-h">Live photography</h2>
+        <p class="facts">Concerts &middot; Ongoing</p>
       </div>
-      <p class="lede">Shot in low, changing stage light and edited to keep the energy of the room.</p>
+      <div class="reveal">
+        <p class="lede">Shooting in low light is often challenging, but I use these constraints to capture the energy of the performer, as if they were in a zone of their own.</p>
+        <div class="reveal-rest" id="live-rest">
+          <p class="lede">I choose my angles in the moment, depending on who is in front of me and how I perceive them. It's later, during editing, that I can twist the light and colors and reveal what I pictured in my head the moment I took the shot.</p>
+        </div>
+        <button class="tl more-r" type="button" aria-expanded="false" aria-controls="live-rest">Read more</button>
+      </div>
     </div>
     <div class="wall-wrap"><div class="wall" id="wall"></div></div>
     <p class="live-more"><a class="tl" href="https://romainfaureof44.myportfolio.com/work" target="_blank" rel="noopener">The full concert portfolio<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></p>
@@ -407,7 +453,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
     <span>Romain Faure, Amsterdam</span>
     <details>
       <summary>Privacy</summary>
-      <p>This site sets no cookies and runs no analytics or tracking. It is hosted on GitHub Pages, which keeps standard technical logs such as IP addresses, and its font loads from Google Fonts, which also receives your IP address. Instagram links open Instagram, which has its own privacy policy.</p>
+      <p>This site sets no cookies and runs no analytics or tracking. It is hosted on GitHub Pages, which keeps standard technical logs such as IP addresses. Everything else, fonts included, loads from this site. Instagram links open Instagram, which has its own privacy policy.</p>
     </details>
   </footer>
 </div>
@@ -444,28 +490,28 @@ const CONCERTS = [
 /* Rostra event photos */
 const ALBUMS = [
   { t: "Printed edition launches", text: "The launch parties of both magazines we designed and printed.", photos: [
-    { src: "img/launch-a1.jpg", sm: "img/launch-a1-sm.jpg", alt: "Two editors hold up copies of the Amsterdam issue outside the launch venue." },
-    { src: "img/launch-a2.jpg", sm: "img/launch-a2-sm.jpg", alt: "A smiling reader holds the Amsterdam issue of Rostra." },
-    { src: "img/launch-a3.jpg", sm: "img/launch-a3-sm.jpg", alt: "A Best Article Award is handed over in front of a green plant wall." },
-    { src: "img/launch-d1.jpg", sm: "img/launch-d1-sm.jpg", alt: "A stack of the Decomposition winter issue on a wooden table." },
-    { src: "img/launch-d2.jpg", sm: "img/launch-d2-sm.jpg", alt: "Guests raise their arms in a crowded basement bar at the winter launch." },
-    { src: "img/launch-d3.jpg", sm: "img/launch-d3-sm.jpg", alt: "A guest works on the magazine's crossword with a pen." },
-    { src: "img/launch-d4.jpg", sm: "img/launch-d4-sm.jpg", alt: "Members of the editorial team wave to the crowd." },
-    { src: "img/launch-d5.jpg", sm: "img/launch-d5-sm.jpg", alt: "A winner holds a red-framed Best Article Award next to the presenter." },
-    { src: "img/launch-d6.jpg", sm: "img/launch-d6-sm.jpg", alt: "Guests smile as they follow the award ceremony." },
-    { src: "img/launch-d7.jpg", sm: "img/launch-d7-sm.jpg", alt: "The presenter reveals a framed award at the bar." },
-    { src: "img/launch-x1.jpg", sm: "img/launch-x1-sm.jpg", alt: "A guest drinks a beer straight at the camera under flash." }
+    { src: "img/launch-a1.jpg", sm: "img/launch-a1-th.jpg", alt: "Two editors hold up copies of the Amsterdam issue outside the launch venue." },
+    { src: "img/launch-a2.jpg", sm: "img/launch-a2-th.jpg", alt: "A smiling reader holds the Amsterdam issue of Rostra." },
+    { src: "img/launch-a3.jpg", sm: "img/launch-a3-th.jpg", alt: "A Best Article Award is handed over in front of a green plant wall." },
+    { src: "img/launch-d1.jpg", sm: "img/launch-d1-th.jpg", alt: "A stack of the Decomposition winter issue on a wooden table." },
+    { src: "img/launch-d2.jpg", sm: "img/launch-d2-th.jpg", alt: "Guests raise their arms in a crowded basement bar at the winter launch." },
+    { src: "img/launch-d3.jpg", sm: "img/launch-d3-th.jpg", alt: "A guest works on the magazine's crossword with a pen." },
+    { src: "img/launch-d4.jpg", sm: "img/launch-d4-th.jpg", alt: "Members of the editorial team wave to the crowd." },
+    { src: "img/launch-d5.jpg", sm: "img/launch-d5-th.jpg", alt: "A winner holds a red-framed Best Article Award next to the presenter." },
+    { src: "img/launch-d6.jpg", sm: "img/launch-d6-th.jpg", alt: "Guests smile as they follow the award ceremony." },
+    { src: "img/launch-d7.jpg", sm: "img/launch-d7-th.jpg", alt: "The presenter reveals a framed award at the bar." },
+    { src: "img/launch-x1.jpg", sm: "img/launch-x1-th.jpg", alt: "A guest drinks a beer straight at the camera under flash." }
   ] },
   { t: "Chess event", text: "Rostra's chess tournament at Café de Krater.", photos: [
-    { src: "img/chess-c1.jpg", sm: "img/chess-c1-sm.jpg", alt: "Rows of players concentrate over chessboards along a long café table." },
-    { src: "img/chess-c2.jpg", sm: "img/chess-c2-sm.jpg", alt: "Players laugh between moves at boards by the café window." },
-    { src: "img/chess-c3.jpg", sm: "img/chess-c3-sm.jpg", alt: "Two players grin over a game while friends look on, balloons behind them." },
-    { src: "img/chess-c4.jpg", sm: "img/chess-c4-sm.jpg", alt: "Two players shake hands across the board as a friend watches with a beer." },
-    { src: "img/chess-c5.jpg", sm: "img/chess-c5-sm.jpg", alt: "A player in a striped sweater studies the board in soft window light." },
-    { src: "img/chess-c6.jpg", sm: "img/chess-c6-sm.jpg", alt: "A player leans over his move, seen between two onlookers." },
-    { src: "img/chess-c7.jpg", sm: "img/chess-c7-sm.jpg", alt: "A long row of players bent over chessboards under hanging mesh lamps in the evening." },
-    { src: "img/chess-c8.jpg", sm: "img/chess-c8-sm.jpg", alt: "A curly-haired player laughs with his arms folded beside the board." },
-    { src: "img/chess-c9.jpg", sm: "img/chess-c9-sm.jpg", alt: "Players line the window tables while onlookers crowd the café behind them." }
+    { src: "img/chess-c1.jpg", sm: "img/chess-c1-th.jpg", alt: "Rows of players concentrate over chessboards along a long café table." },
+    { src: "img/chess-c2.jpg", sm: "img/chess-c2-th.jpg", alt: "Players laugh between moves at boards by the café window." },
+    { src: "img/chess-c3.jpg", sm: "img/chess-c3-th.jpg", alt: "Two players grin over a game while friends look on, balloons behind them." },
+    { src: "img/chess-c4.jpg", sm: "img/chess-c4-th.jpg", alt: "Two players shake hands across the board as a friend watches with a beer." },
+    { src: "img/chess-c5.jpg", sm: "img/chess-c5-th.jpg", alt: "A player in a striped sweater studies the board in soft window light." },
+    { src: "img/chess-c6.jpg", sm: "img/chess-c6-th.jpg", alt: "A player leans over his move, seen between two onlookers." },
+    { src: "img/chess-c7.jpg", sm: "img/chess-c7-th.jpg", alt: "A long row of players bent over chessboards under hanging mesh lamps in the evening." },
+    { src: "img/chess-c8.jpg", sm: "img/chess-c8-th.jpg", alt: "A curly-haired player laughs with his arms folded beside the board." },
+    { src: "img/chess-c9.jpg", sm: "img/chess-c9-th.jpg", alt: "Players line the window tables while onlookers crowd the café behind them." }
   ] }
 ];
 
@@ -491,52 +537,52 @@ document.querySelectorAll(".pair").forEach(pair => {
   pair.addEventListener("mouseleave", () => { if (canHover.matches && !pinned) set(false); });
 });
 
-/* One moving image at a time: the video under the pointer, otherwise the one nearest the middle of the screen */
+/* Reels play continuously while on screen and pause when scrolled away (saves battery and data).
+   Video files only download when they come near the screen; until then the poster image shows. */
 const film = $("#film"), toggle = $("#film-toggle");
-let filmWanted = !reduceMotion, hovered = null, ticking = false;
+let filmWanted = !reduceMotion;
 const vids = [...document.querySelectorAll("video.loop"), film];
-/* video files only download when they come near the screen; until then the poster image shows */
 const load = (v) => { if (!v.getAttribute("src") && v.dataset.src) { v.src = v.dataset.src; v.preload = "auto"; } };
+const onScreen = new Set();
+const sync = (v) => {
+  const want = onScreen.has(v) && (v === film ? filmWanted : !reduceMotion);
+  if (want) { load(v); if (v.paused) v.play().catch(() => {}); } else if (!v.paused) v.pause();
+};
 if ("IntersectionObserver" in window) {
-  const near = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { load(e.target); near.unobserve(e.target); queue(); } }), { rootMargin: "600px 0px" });
-  vids.forEach(v => near.observe(v));
-} else vids.forEach(load);
-document.querySelectorAll("video.loop").forEach(v => {
-  const hit = v.closest("a") || v;
-  hit.addEventListener("mouseenter", () => { hovered = v; pick(); });
-  hit.addEventListener("mouseleave", () => { if (hovered === v) hovered = null; pick(); });
-});
-function visible(v) {
-  const r = v.getBoundingClientRect(), vh = window.innerHeight;
-  const shown = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0));
-  return { ratio: r.height ? shown / Math.min(r.height, vh) : 0, dist: Math.abs((r.top + r.bottom) / 2 - vh / 2) };
-}
-function pick() {
-  ticking = false;
-  let win = null;
-  if (hovered && visible(hovered).ratio > .3 && !reduceMotion) win = hovered;
-  else {
-    let best = Infinity;
-    vids.forEach(v => {
-      if (v === film ? !filmWanted : reduceMotion) return;
-      const s = visible(v);
-      if (s.ratio >= (v === film ? .35 : .6) && s.dist < best) { best = s.dist; win = v; }
-    });
-  }
-  if (win) load(win);
-  vids.forEach(v => { if (v === win) { if (v.paused) v.play().catch(() => {}); } else if (!v.paused) v.pause(); });
-}
-const queue = () => { if (!ticking) { ticking = true; requestAnimationFrame(pick); } };
-window.addEventListener("scroll", queue, { passive: true });
-window.addEventListener("resize", queue);
-window.addEventListener("load", queue); queue();
+  const near = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { load(e.target); near.unobserve(e.target); } }), { rootMargin: "600px 0px" });
+  const seen = new IntersectionObserver(es => es.forEach(e => { e.isIntersecting ? onScreen.add(e.target) : onScreen.delete(e.target); sync(e.target); }), { threshold: .2 });
+  vids.forEach(v => { near.observe(v); seen.observe(v); });
+} else vids.forEach(v => { load(v); onScreen.add(v); sync(v); });
 const setToggle = () => {
   const on = !film.paused;
   toggle.querySelector("span").textContent = on ? "Pause the footage" : "Play the footage";
   toggle.querySelector("use").setAttribute("href", on ? "#i-pause" : "#i-play");
 };
 film.addEventListener("play", setToggle); film.addEventListener("pause", setToggle); setToggle();
-toggle.addEventListener("click", () => { filmWanted = film.paused; if (filmWanted) film.play().catch(() => {}); else film.pause(); });
+toggle.addEventListener("click", () => { filmWanted = film.paused; if (filmWanted) { load(film); film.play().catch(() => {}); } else film.pause(); });
+
+/* About toggle in the phone header */
+const whoBtn = document.querySelector(".who-btn");
+whoBtn.addEventListener("click", () => {
+  const open = document.querySelector("header.top").classList.toggle("show-who");
+  whoBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  whoBtn.textContent = open ? "Close" : "About";
+});
+
+/* Live photography text: the first sentence shows; hovering it (or the button) reveals the rest */
+document.querySelectorAll(".reveal").forEach(box => {
+  const rest = box.querySelector(".reveal-rest"), btn = box.querySelector(".more-r");
+  let pinned = false;
+  const set = (open) => {
+    box.classList.toggle("open", open);
+    rest.style.maxHeight = open ? rest.scrollHeight + "px" : "";
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "Show less" : "Read more";
+  };
+  btn.addEventListener("click", () => { pinned = !box.classList.contains("open"); set(pinned); });
+  box.addEventListener("mouseenter", () => { if (canHover.matches) set(true); });
+  box.addEventListener("mouseleave", () => { if (canHover.matches && !pinned) set(false); });
+});
 
 /* My photos open large */
 document.querySelectorAll("[data-photo]").forEach(b => b.addEventListener("click", () => openLB(+b.dataset.photo)));
@@ -603,8 +649,8 @@ function showLB() {
   $("#lb-img").src = lbSet[lbIndex].src; $("#lb-img").alt = lbSet[lbIndex].alt;
   $("#lb-cap").textContent = lbSet[lbIndex].cap || "";
 }
-function openLB(i, set = PHOTOS) { lastFocus = document.activeElement; lbSet = set; lbIndex = i; showLB(); lb.classList.add("open"); $("#lb-close").focus(); }
-function closeLB() { lb.classList.remove("open"); if (lastFocus) lastFocus.focus(); }
+function openLB(i, set = PHOTOS) { lastFocus = document.activeElement; lbSet = set; lbIndex = i; showLB(); lb.classList.add("open"); document.documentElement.style.overflow = "hidden"; $("#lb-close").focus(); }
+function closeLB() { lb.classList.remove("open"); document.documentElement.style.overflow = ""; if (lastFocus) lastFocus.focus(); }
 function step(d) { lbIndex = (lbIndex + d + lbSet.length) % lbSet.length; showLB(); }
 $("#lb-close").addEventListener("click", closeLB);
 $("#lb-prev").addEventListener("click", () => step(-1));
