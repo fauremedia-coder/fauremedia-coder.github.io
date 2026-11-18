@@ -291,7 +291,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
             <figcaption>My photo</figcaption>
           </figure>
           <figure style="--ar:.5625">
-            <a class="media" href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener" aria-label="Poster reel for the 7 August 2026 show, on Instagram"><video class="loop" src="img/post-ps-3.mp4" poster="img/post-ps-3.jpg" muted loop playsinline preload="metadata" aria-label="Animated poster for the 7 August 2026 show, with graphics added by the designer."></video></a>
+            <a class="media" href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener" aria-label="Poster reel for the 7 August 2026 show, on Instagram"><video class="loop" data-src="img/post-ps-3.mp4" poster="img/post-ps-3.jpg" muted loop playsinline preload="none" aria-label="Animated poster for the 7 August 2026 show, with graphics added by the designer."></video></a>
             <figcaption><a href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener">The poster reel, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
           </figure>
         </div>
@@ -314,30 +314,26 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
     <div class="clients">
       <div class="client">
         <h3>OnTap Visual Agency</h3>
-        <p class="facts">Freelance videographer and photographer &middot; Sep 2025 to now</p>
-        <p class="desc">An Amsterdam visual agency that connects young creatives with new brands and entrepreneurs.</p>
         <div class="reels">
           <a class="reel" href="https://www.instagram.com/reel/DY2D3jWIvV8/" target="_blank" rel="noopener">
-            <span class="frame"><video class="loop" src="img/reel-ontap-1.mp4" poster="img/reel-ontap-1.jpg" muted loop playsinline preload="metadata" aria-label="A beer being poured from a bar tap."></video></span>
+            <span class="frame"><video class="loop" data-src="img/reel-ontap-1.mp4" poster="img/reel-ontap-1.jpg" muted loop playsinline preload="none" aria-label="A beer being poured from a bar tap."></video></span>
             <span class="cap"><span class="t">Website launch<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Camera, with two others &middot; May 2026</span></span>
           </a>
           <a class="reel" href="https://www.instagram.com/reel/Dcgcbsjq2L_/" target="_blank" rel="noopener">
-            <span class="frame"><video class="loop" src="img/reel-ontap-2.mp4" poster="img/reel-ontap-2.jpg" muted loop playsinline preload="metadata" aria-label="A woman answers interview questions on an Amsterdam street."></video></span>
+            <span class="frame"><video class="loop" data-src="img/reel-ontap-2.mp4" poster="img/reel-ontap-2.jpg" muted loop playsinline preload="none" aria-label="A woman answers interview questions on an Amsterdam street."></video></span>
             <span class="cap"><span class="t">Brand identity makeovers<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Camera &middot; Aug 2026</span></span>
           </a>
         </div>
       </div>
       <div class="client">
         <h3>Rostra Economica</h3>
-        <p class="facts">Photographer and videographer, marketing committee &middot; Oct 2025 to Jun 2026</p>
-        <p class="desc">A student magazine. It gave my work a purpose and a platform: it reached readers instead of staying on a hard drive.</p>
         <div class="reels">
           <a class="reel" href="https://www.instagram.com/reel/DWwYjXUjCEV/" target="_blank" rel="noopener">
-            <span class="frame"><video class="loop" src="img/reel-rostra-1.mp4" poster="img/reel-rostra-1.jpg" muted loop playsinline preload="metadata" aria-label="A man on a red bridge by the water."></video></span>
+            <span class="frame"><video class="loop" data-src="img/reel-rostra-1.mp4" poster="img/reel-rostra-1.jpg" muted loop playsinline preload="none" aria-label="A man on a red bridge by the water."></video></span>
             <span class="cap"><span class="t">Chess tournament promo<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Video &middot; Apr 2026</span></span>
           </a>
           <a class="reel" href="https://www.instagram.com/reel/DUVkhpUjMUE/" target="_blank" rel="noopener">
-            <span class="frame"><video class="loop" src="img/reel-rostra-2.mp4" poster="img/reel-rostra-2.jpg" muted loop playsinline preload="metadata" aria-label="Two editors talk at a table in a university hall."></video></span>
+            <span class="frame"><video class="loop" data-src="img/reel-rostra-2.mp4" poster="img/reel-rostra-2.jpg" muted loop playsinline preload="none" aria-label="Two editors talk at a table in a university hall."></video></span>
             <span class="cap"><span class="t">Gabriel Zucman at the UvA<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Video and photos &middot; Feb 2026</span></span>
           </a>
         </div>
@@ -347,7 +343,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
   </section>
 
   <section class="film" id="film-sec" aria-labelledby="film-h">
-    <video id="film" src="img/jr-loop.mp4" poster="img/jr-loop-poster.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+    <video id="film" data-src="img/jr-loop.mp4" poster="img/jr-loop-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
     <div class="film-in">
       <div class="head">
         <div>
@@ -499,6 +495,12 @@ document.querySelectorAll(".pair").forEach(pair => {
 const film = $("#film"), toggle = $("#film-toggle");
 let filmWanted = !reduceMotion, hovered = null, ticking = false;
 const vids = [...document.querySelectorAll("video.loop"), film];
+/* video files only download when they come near the screen; until then the poster image shows */
+const load = (v) => { if (!v.getAttribute("src") && v.dataset.src) { v.src = v.dataset.src; v.preload = "auto"; } };
+if ("IntersectionObserver" in window) {
+  const near = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { load(e.target); near.unobserve(e.target); queue(); } }), { rootMargin: "600px 0px" });
+  vids.forEach(v => near.observe(v));
+} else vids.forEach(load);
 document.querySelectorAll("video.loop").forEach(v => {
   const hit = v.closest("a") || v;
   hit.addEventListener("mouseenter", () => { hovered = v; pick(); });
@@ -521,6 +523,7 @@ function pick() {
       if (s.ratio >= (v === film ? .35 : .6) && s.dist < best) { best = s.dist; win = v; }
     });
   }
+  if (win) load(win);
   vids.forEach(v => { if (v === win) { if (v.paused) v.play().catch(() => {}); } else if (!v.paused) v.pause(); });
 }
 const queue = () => { if (!ticking) { ticking = true; requestAnimationFrame(pick); } };
