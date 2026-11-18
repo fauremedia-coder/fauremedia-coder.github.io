@@ -47,6 +47,7 @@ a { color: inherit; text-underline-offset: .28em; text-decoration-thickness: 1px
 .icon { width: .82em; height: .82em; vertical-align: -.04em; margin-left: .25em; fill: none; stroke: currentColor;
   stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s var(--ease); }
 .tnum { font-variant-numeric: tabular-nums; }
+.nw { white-space: nowrap; }
 
 /* text links and buttons share one quiet style */
 .tl { display: inline-block; font: inherit; font-size: 14.5px; line-height: 1.4; color: var(--text); background: none; border: 0; padding: 4px 0; cursor: pointer;
@@ -71,7 +72,6 @@ header.top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr)
   font-variation-settings: "wdth" 104; text-wrap: balance; }
 .head .facts { margin: 8px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
 .head .lede { margin: 0; max-width: 62ch; text-wrap: pretty; }
-.head .lede + .lede { margin-top: .7em; }
 
 /* poster shoots: my photo, the poster it became, and the process note beside them */
 .pairs { container-type: inline-size; display: grid; gap: clamp(56px, 7vw, 104px); }
@@ -94,15 +94,12 @@ button.media { cursor: zoom-in; }
 .note.open .note-body { -webkit-mask-image: none; mask-image: none; }
 .note.fits .note-body { -webkit-mask-image: none; mask-image: none; }
 .note-body p { margin: 0 0 .75em; text-wrap: pretty; }
-.note-body .todo { color: #8E877E; font-style: italic; }
 .note-ctl { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 12px; }
 .note.fits .more { display: none; }
 
 /* client reels */
 .clients { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 5vw, 72px); align-items: start; }
 .client h3 { margin: 0; font-size: clamp(19px, 1.6vw, 22px); font-weight: 620; line-height: 1.25; letter-spacing: -.01em; }
-.client .facts { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
-.client .desc { margin: 10px 0 0; max-width: 54ch; font-size: 15.5px; text-wrap: pretty; }
 .reels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
 .reel { display: block; text-decoration: none; }
 .reel .frame { display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--raise); }
@@ -176,7 +173,8 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
 /* lightbox */
 .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10,9,8,.97); display: none; align-items: center; justify-content: center; padding: 60px 16px 70px; }
 .lightbox.open { display: flex; }
-.lightbox img { max-height: 100%; max-width: 100%; width: auto; object-fit: contain; }
+.lightbox img { max-height: 100%; max-width: 100%; width: auto; object-fit: contain; transition: opacity .3s var(--ease); }
+.lightbox img.loading { opacity: .35; }
 .lb-btn { position: absolute; font: inherit; font-size: 14.5px; color: var(--text); background: none; border: 0; padding: 10px 6px; cursor: pointer;
   text-decoration: underline; text-decoration-color: #55504A; text-underline-offset: .3em; }
 .lb-btn:hover { text-decoration-color: var(--accent); }
@@ -193,7 +191,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
   .clients { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   /* on phones the photo and its poster sit side by side in a swipe row */
-  .pair { grid-template-columns: 1fr; --h: min(62svh, calc((100vw - 2 * var(--pad) - 28px) / .8)); }
+  .pair { grid-template-columns: 1fr; --h: min(62svh, calc((100vw - 2 * var(--pad) - 12px) / var(--sum))); }
   .duo { overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad);
     scroll-padding: 0 var(--pad); }
   .duo::-webkit-scrollbar { display: none; }
@@ -215,6 +213,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
   .first .head .lede { display: none; }
   .first .head { margin-bottom: 16px; }
   .lede-m { display: block; margin: 0; }
+  .pair { --h: min(62svh, calc((100vw - 2 * var(--pad) - 28px) / .8)); }
   .film-foot { flex-direction: column; align-items: flex-start; }
   .film-ctl { justify-items: start; text-align: left; }
   .strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -243,7 +242,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
     <p class="who" id="who">Master's student in Communication Science (Persuasive Communication) at the University of Amsterdam. I direct poster shoots, make reels for an agency and a student magazine, and film live comedy.</p>
     <div class="top-links">
       <button class="tl who-btn" type="button" aria-expanded="false" aria-controls="who">About</button>
-      <a class="tl" href="#contact">Internship from Feb 2027<svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+      <a class="tl" href="#contact">Internship from Feb <span class="nw">2027<svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></span></a>
     </div>
     </div>
   </header>
@@ -267,7 +266,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
           </figure>
           <figure style="--ar:.8">
             <a class="media" href="https://www.instagram.com/p/DZw1otjICrD/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/post-ps-1.jpg" alt="Poster for the 3 July 2026 show, with graphics added by the designer." decoding="async"></a>
-            <figcaption><a href="https://www.instagram.com/p/DZw1otjICrD/" target="_blank" rel="noopener">The poster, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
+            <figcaption><a href="https://www.instagram.com/p/DZw1otjICrD/" target="_blank" rel="noopener">The poster, on <span class="nw">Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></a></figcaption>
           </figure>
         </div>
         <p class="lede lede-m">The JR Scheme is a stand-up comedy night run by Jacob Stewart and Robert Kim. I shoot the photos for their posters. Each photo sits next to the poster it became, with graphics by the show's designer.</p>
@@ -289,7 +288,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
           </figure>
           <figure style="--ar:.8">
             <a class="media" href="https://www.instagram.com/p/DYg-CTboosw/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/post-ps-2.jpg" alt="Poster for the 5 June 2026 show, with graphics added by the designer." loading="lazy" decoding="async"></a>
-            <figcaption><a href="https://www.instagram.com/p/DYg-CTboosw/" target="_blank" rel="noopener">The poster, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
+            <figcaption><a href="https://www.instagram.com/p/DYg-CTboosw/" target="_blank" rel="noopener">The poster, on <span class="nw">Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></a></figcaption>
           </figure>
         </div>
         <div class="note">
@@ -310,7 +309,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
           </figure>
           <figure style="--ar:.8">
             <a class="media" href="https://www.instagram.com/p/DXZfBxbCJtW/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/post-ps-4.jpg" alt="Poster for the 1 May 2026 show, with graphics added by the designer." loading="lazy" decoding="async"></a>
-            <figcaption><a href="https://www.instagram.com/p/DXZfBxbCJtW/" target="_blank" rel="noopener">The poster, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
+            <figcaption><a href="https://www.instagram.com/p/DXZfBxbCJtW/" target="_blank" rel="noopener">The poster, on <span class="nw">Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></a></figcaption>
           </figure>
         </div>
         <div class="note">
@@ -331,7 +330,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
           </figure>
           <figure style="--ar:.5625">
             <a class="media" href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><video class="loop" data-src="img/post-ps-3.mp4" poster="img/post-ps-3.jpg" muted loop playsinline preload="none" aria-label="Animated poster for the 7 August 2026 show, with graphics added by the designer."></video></a>
-            <figcaption><a href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener">The poster reel, on Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></figcaption>
+            <figcaption><a href="https://www.instagram.com/reel/Da-TYKeoVG0/" target="_blank" rel="noopener">The poster reel, on <span class="nw">Instagram<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></a></figcaption>
           </figure>
         </div>
         <div class="note">
@@ -360,11 +359,11 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
         <div class="clips">
           <a class="reel" href="https://www.instagram.com/reel/DdyGW4EIfyI/" target="_blank" rel="noopener">
             <span class="frame"><img src="img/post-vg-1.jpg" alt="" loading="lazy" decoding="async"></span>
-            <span class="cap"><span class="t">Stand-up clip<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Sep 2026</span></span>
+            <span class="cap"><span class="t">Stand-up <span class="nw">clip<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></span><span class="r">Sep 2026</span></span>
           </a>
           <a class="reel" href="https://www.instagram.com/reel/Dd3ENzZBNtD/" target="_blank" rel="noopener">
             <span class="frame"><img src="img/post-vg-2.jpg" alt="" loading="lazy" decoding="async"></span>
-            <span class="cap"><span class="t">Heckler clip<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Sep 2026</span></span>
+            <span class="cap"><span class="t">Heckler <span class="nw">clip<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></span><span class="r">Sep 2026</span></span>
           </a>
         </div>
         <div class="film-ctl">
@@ -390,7 +389,7 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
       </div>
     </div>
     <div class="wall-wrap"><div class="wall" id="wall"></div></div>
-    <p class="live-more"><a class="tl" href="https://romainfaureof44.myportfolio.com/work" target="_blank" rel="noopener">The full concert portfolio<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></a></p>
+    <p class="live-more"><a class="tl" href="https://romainfaureof44.myportfolio.com/work" target="_blank" rel="noopener">The full concert <span class="nw">portfolio<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></a></p>
   </section>
 
   <section class="sec" id="reels" aria-labelledby="reels-h">
@@ -404,11 +403,11 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
         <div class="reels">
           <a class="reel" href="https://www.instagram.com/reel/DY2D3jWIvV8/" target="_blank" rel="noopener">
             <span class="frame"><video class="loop" data-src="img/reel-ontap-1.mp4" poster="img/reel-ontap-1.jpg" muted loop playsinline preload="none" aria-label="A beer being poured from a bar tap."></video></span>
-            <span class="cap"><span class="t">Website launch<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Camera, with two others &middot; May 2026</span></span>
+            <span class="cap"><span class="t">Website <span class="nw">launch<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></span><span class="r">Camera, with two others &middot; May 2026</span></span>
           </a>
           <a class="reel" href="https://www.instagram.com/reel/Dcgcbsjq2L_/" target="_blank" rel="noopener">
             <span class="frame"><video class="loop" data-src="img/reel-ontap-2.mp4" poster="img/reel-ontap-2.jpg" muted loop playsinline preload="none" aria-label="A woman answers interview questions on an Amsterdam street."></video></span>
-            <span class="cap"><span class="t">Brand identity makeovers<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Camera &middot; Aug 2026</span></span>
+            <span class="cap"><span class="t">Brand identity <span class="nw">makeovers<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></span><span class="r">Camera &middot; Aug 2026</span></span>
           </a>
         </div>
       </div>
@@ -417,11 +416,11 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
         <div class="reels">
           <a class="reel" href="https://www.instagram.com/reel/DWwYjXUjCEV/" target="_blank" rel="noopener">
             <span class="frame"><video class="loop" data-src="img/reel-rostra-1.mp4" poster="img/reel-rostra-1.jpg" muted loop playsinline preload="none" aria-label="A man on a red bridge by the water."></video></span>
-            <span class="cap"><span class="t">Chess tournament promo<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Video &middot; Apr 2026</span></span>
+            <span class="cap"><span class="t">Chess tournament <span class="nw">promo<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></span><span class="r">Video &middot; Apr 2026</span></span>
           </a>
           <a class="reel" href="https://www.instagram.com/reel/DUVkhpUjMUE/" target="_blank" rel="noopener">
             <span class="frame"><video class="loop" data-src="img/reel-rostra-2.mp4" poster="img/reel-rostra-2.jpg" muted loop playsinline preload="none" aria-label="Two editors talk at a table in a university hall."></video></span>
-            <span class="cap"><span class="t">Gabriel Zucman at the UvA<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span><span class="r">Video and photos &middot; Feb 2026</span></span>
+            <span class="cap"><span class="t">Gabriel Zucman at the <span class="nw">UvA<svg class="icon" aria-hidden="true"><use href="#i-out"/></svg></span></span><span class="r">Video and photos &middot; Feb 2026</span></span>
           </a>
         </div>
         <div class="albums" id="albums"></div>
@@ -440,11 +439,11 @@ footer details p { margin: 10px 0 0; line-height: 1.55; }
         <p class="mail-note">Write to me about an internship, a project or a question about the work above.</p>
       </div>
       <dl class="facts-list">
-        <dt>Studying</dt><dd>MSc Communication Science, Persuasive Communication, University of Amsterdam, 2026&ndash;2027</dd>
+        <dt>Studying</dt><dd>MSc Communication Science, Persuasive Communication, University of Amsterdam, <span class="nw tnum">2026&ndash;2027</span></dd>
         <dt>Based in</dt><dd>Amsterdam</dd>
         <dt>Languages</dt><dd>French (native), English (fluent)</dd>
-        <dt>CV</dt><dd><a href="files/Romain_Faure_CV_2026.pdf" target="_blank" rel="noopener">Romain Faure, CV 2026 (PDF, 1 page)</a></dd>
-        <dt>Elsewhere</dt><dd><a href="https://www.linkedin.com/in/romain-faure-77494a198" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://www.instagram.com/romain_faure4_4/" target="_blank" rel="noopener">Instagram, @romain_faure4_4</a></dd>
+        <dt>CV</dt><dd><a href="files/Romain_Faure_CV_2026.pdf" target="_blank" rel="noopener">CV 2026, PDF</a></dd>
+        <dt>Elsewhere</dt><dd><a href="https://www.linkedin.com/in/romain-faure-77494a198" target="_blank" rel="noopener">LinkedIn</a><br><a href="https://www.instagram.com/romain_faure4_4/" target="_blank" rel="noopener">Instagram, @romain_faure4_4</a></dd>
       </dl>
     </div>
   </section>
@@ -647,7 +646,9 @@ copyBtn.addEventListener("click", async () => {
 let lbIndex = 0, lastFocus = null, lbSet = PHOTOS;
 const lb = $("#lightbox");
 function showLB() {
-  $("#lb-img").src = lbSet[lbIndex].src; $("#lb-img").alt = lbSet[lbIndex].alt;
+  const im = $("#lb-img");
+  if (im.getAttribute("src") !== lbSet[lbIndex].src) { im.classList.add("loading"); im.onload = im.onerror = () => im.classList.remove("loading"); }
+  im.src = lbSet[lbIndex].src; im.alt = lbSet[lbIndex].alt;
   $("#lb-cap").textContent = lbSet[lbIndex].cap || "";
 }
 function openLB(i, set = PHOTOS) { lastFocus = document.activeElement; lbSet = set; lbIndex = i; showLB(); lb.classList.add("open"); document.documentElement.style.overflow = "hidden"; $("#lb-close").focus(); }
